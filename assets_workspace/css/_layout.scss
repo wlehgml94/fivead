@@ -1,0 +1,211 @@
+//var
+:root {
+  //swiper
+  --swiper-theme-color: #141414;
+  --swiper-navigation-sides-offset: 0;
+  --swiper-navigation-size: 4.4rem;
+  --swiper-pagination-progressbar-size: 0.2rem;
+  @include desktop {
+    --header_w: 34.1rem;
+    --inner_x_pd: 6rem;
+    --common_inner: 14.8rem 6rem 18.8rem;
+    --common_inner_y: 6rem;
+    --icon_checkbox_size: 2.8rem;
+    --max-content: 90.4rem;
+  }
+  @include mobile {
+    --header_w: 100%;
+    --inner_x_pd: 2rem;
+    --common_inner: 4rem 2rem 13rem;
+    --common_inner_y: 2rem;
+    --icon_checkbox_size: 2.2rem;
+  }
+}
+html {
+  scroll-behavior: auto;
+  @include desktop {
+    font-size: 10px;
+  }
+  @include desktop_small {
+    font-size: 8px;
+  }
+  @include mobile {
+    font-size: 10px;
+  }
+  @media screen and (max-width: 374px) {
+    font-size: 8px;
+  }
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-size: 1.8rem;
+}
+.hidden_pc {
+  @include desktop {
+    display: none !important;
+  }
+  @include mobile {
+    display: block !important;
+  }
+}
+.hidden_mo {
+  @include desktop {
+    display: block !important;
+  }
+  @include mobile {
+    display: none !important;
+  }
+}
+.event_none {
+  pointer-events: none;
+}
+.common-inner {
+  flex: 1;
+  padding: var(--common_inner);
+  width: 100%;
+}
+.hidden_scroll {
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden !important;
+}
+/* 공통 버튼 스타일*/
+.bt-base {
+  position: relative;
+  display: inline-flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  min-width: 24.3rem;
+  min-height: 5.4rem;
+  padding: 0 1.6rem;
+  border-top: 2px solid rgba(20, 20, 20);
+  border-bottom: 2px solid rgba(20, 20, 20);
+  &::after {
+    content: '';
+    display: inline-flex;
+    width: 1.4rem;
+    height: 1.4rem;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: cover;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M0.999512 15.0005L15.0006 0.999512' stroke='%23141414' stroke-width='2'/%3E%3Cpath d='M2.88281 0.999512H15.0005V13.1172' stroke='%23141414' stroke-width='2'/%3E%3C/svg%3E");
+    background-color: $c_text;
+  }
+  @include text(2rem, 700, 170%);
+  &.no_hover {
+    @include textColor($c_text, 0.3);
+  }
+  &:not(.no_hover) {
+    @include hoverStyle {
+      background: $c_text;
+      color: $c_primary;
+      opacity: 1;
+      border-color: rgba(20, 20, 20, 1);
+      &::after {
+        background-color: $c_primary;
+      }
+    }
+  }
+  &.__full {
+    width: 100%;
+  }
+  &.__white {
+    border-color: $c_text;
+    opacity: 1;
+  }
+  &.active {
+    background: $c_text;
+    color: $c_primary;
+    opacity: 1;
+    border-color: rgba(20, 20, 20, 1);
+    cursor: pointer;
+    &::after {
+      background-color: $c_primary;
+    }
+  }
+  @include mobile {
+    min-width: 100%;
+    min-height: 4.3rem;
+    padding: 0 2rem;
+    @include text(1.8rem, 700, 170%);
+  }
+}
+.bt-wrapper-main{
+  text-align: center;
+  @include desktop{
+    margin-top: 4rem;
+  }
+  @include mobile{
+    margin-top: 1.5rem;
+    margin-bottom: 13.2rem;
+  }
+  .bt-main{
+    border: none;
+    min-width: auto;
+    min-height: 3.4rem;
+    padding: 0;
+    border-bottom: 2px solid #fff;
+    &:hover{
+      @include desktop{
+        border-bottom: 2px solid rgba(20, 20, 20);
+        background: none;
+        color: #141414;
+      }
+      &:after{
+        background-color: #141414;
+      }
+    }
+  }
+}
+.btn-floating {
+  position: fixed;
+  z-index: 100;
+  @include desktop{
+    right: 4rem;
+    bottom: 5rem;
+  }
+  @include mobile{
+    right: 2rem;
+    bottom: 4.4rem;
+  }
+  .floating_item {
+    display: block;
+    background-color: #D95204;
+    border-radius: 50%;
+    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.2);
+    &.pc-floting{
+      @include desktop {
+        width: 10rem;
+        height: 10rem;
+        @include text(1.8rem,700,140%);
+        text-align: center;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.4rem 1.6rem 1.8rem;
+      }
+      @include mobile{
+        display: none;
+      }
+    }
+    &.mo-floting{
+      @include desktop{
+        display: none;
+      }
+      @include mobile{
+        padding: 1.6rem;
+        width: 5.6rem;
+        height: 5.6rem;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none'%3E%3Cpath d='M24.9276 18.2571C26.2929 19.4627 26.2249 21.149 25.4526 22.3546C25.161 22.81 24.6843 23.4014 24.0095 24.0762C22.862 25.2237 20.7841 26.0239 19.2804 25.9993C14.8011 25.9272 11.7781 24.729 6.52488 19.4758C1.27164 14.2225 0.0725893 11.1995 0.000514959 6.72025C-0.0232368 5.21651 0.776952 3.13782 1.92359 1.99119C2.59847 1.31631 3.1898 0.839636 3.64518 0.548062C4.85079 -0.223461 6.53717 -0.292259 7.74277 1.07306C8.29398 1.69798 9.2506 2.9773 9.79116 3.71114C10.7691 5.04042 10.9206 6.90125 9.83211 8.3108C9.53235 8.69902 9.07451 9.24203 8.70922 9.66874C8.34312 10.0963 8.27432 10.7015 8.52822 11.2036C9.21047 12.555 10.1024 13.7811 11.1622 14.8384C12.2196 15.8983 13.4457 16.7902 14.797 17.4724C15.2999 17.7255 15.9044 17.6575 16.3319 17.2914C16.7586 16.9261 17.3025 16.4675 17.6898 16.1685C19.0986 15.0801 20.9602 15.2308 22.2895 16.2095C23.0234 16.75 24.3035 17.7067 24.9276 18.2579V18.2571Z' fill='white'/%3E%3C/svg%3E");        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 2.4rem;
+      }
+    }
+  }
+}
+/* 페이지 레이아웃 */
