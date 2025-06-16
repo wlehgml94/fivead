@@ -84,10 +84,10 @@
   $host = $_SERVER['REQUEST_URI'];
   $page_path = strpos($host, '&') ? strtok($host, '&') : strtok($host, '?');
   $page_name = 'n_main';
- 
+
   // formatted_contact_number
   $formatted_contact_number = str_replace('-', '.', CONTACT_NUMBER);
 ?>
   <h2 class="d_hidden" id="pageName"><?= $page_name; ?></h2>
-
+  <div><a href="/contact_1" class="ga4__topBanner" ga4-text="FIVE AD 서비스 소개서 다운로드"></a></div>
   <main class="fivead-visual-wrapper">
