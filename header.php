@@ -71,7 +71,7 @@
   <link rel="icon" href="<?= WEB_URL; ?>/assets/images/favicon.png" />
   <link rel="stylesheet" href="<?= WEB_URL; ?>/assets/lib/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="<?= WEB_URL; ?>/assets/css/common.css" rel="prerender" />
-
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   <!-- Start VWO Async SmartCode -->
   <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
 </head>
@@ -91,5 +91,3 @@
   <h2 class="d_hidden" id="pageName"><?= $page_name; ?></h2>
 
   <main class="fivead-visual-wrapper">
-    <!-- dim -->
-    <div class="dim"></div>
