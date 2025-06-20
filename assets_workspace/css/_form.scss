@@ -109,9 +109,9 @@ span.wpcf7-not-valid-tip {
   }
   .contact_item {
     position: relative;
-    border-bottom: 1px solid rgba($color: $c_text, $alpha: 0.2);
+    border-bottom: 1px solid rgba($color: $c_bk, $alpha: 0.2);
     &.o_verify {
-      border-bottom: 1px solid rgba($color: $c_text, $alpha: 1);
+      border-bottom: 1px solid rgba($color: $c_bk, $alpha: 1);
     }
     label {
       display: flex;
@@ -308,7 +308,7 @@ span.wpcf7-not-valid-tip {
     }
   }
   &._black{
-    background: $c_text;
+    background: $c_bk;
     .inquiry-inner{
       color: #fff;
       @include desktop{
@@ -321,7 +321,7 @@ span.wpcf7-not-valid-tip {
       .bt-base{
         &.active{
           background: $c_primary;
-          color: $c_text;
+          color: $c_bk;
         }
       }
     }
@@ -450,7 +450,7 @@ span.wpcf7-not-valid-tip {
     }
     .common-text{
       margin-top: 2rem;
-      color: $c_text;
+      color: $c_bk;
       line-height: 140%;
       @include desktop{
         font-size: 2.4rem;
@@ -526,7 +526,7 @@ span.wpcf7-not-valid-tip {
         }
         @include mobile{
           font-size: 1.4rem;
-          background: $c_gray_4;
+          background: $c_gray_3;
           border-radius: 1.2rem;
           padding: 1.2rem 1.6rem;
           margin-left: 1.4rem;
@@ -577,7 +577,7 @@ span.wpcf7-not-valid-tip {
         margin-top: 2.4rem;
       }
       &.active{
-        background: $c_text;
+        background: $c_bk;
         color: $c_primary;
       }
       &::after{

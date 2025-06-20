@@ -85,10 +85,16 @@
   $page_path = strpos($host, '&') ? strtok($host, '&') : strtok($host, '?');
   $page_name = 'n_main';
 
+  $img_src = WEB_URL.'/assets/images/';
   // formatted_contact_number
   $formatted_contact_number = str_replace('-', '.', CONTACT_NUMBER);
 ?>
   <h2 class="d_hidden" id="pageName"><?= $page_name; ?></h2>
-  <div><a href="/contact_1" class="ga4__topBanner" ga4-text="FIVE AD 서비스 소개서 다운로드"></a></div>
+  <div class="top_banner">
+    <a href="/contact_1" class="ga4__topBanner" ga4-text="FIVE AD 서비스 소개서 다운로드">
+      <img src="<?= $img_src ?>common/pc/top_logo.png" alt="">
+      <p>광고 상품 소개서 다운로드</p>
+    </a>
+  </div>
   <main class="fivead-visual-wrapper">
   <div class="dim"></div>

@@ -2,13 +2,13 @@
 
 //setColor
 $c_primary: #fff;
-$c_text: #141414;
+$c_bk: #000;
+$c_point: #F4733A;
 $c_sub_text: #808080;
 $c_err: #ff4949;
-$c_gray_1: #393939;
-$c_gray_2: #c5c5c5;
-$c_gray_3: #dddddd;
-$c_gray_4: #f4f4f4;
+$c_gray_1: #646464;
+$c_gray_2: #acacac;
+$c_gray_3: #F5F5F5;
 
 //imageUrl
 $images: '../images';
@@ -65,18 +65,30 @@ $moSize: 960px;
 
 //text guide
 @mixin text2($size, $bold: 400, $line: null) {
-  @if ($size == '60') {
-    font-size: 6rem;
-  } @else if ($size == '50') {
-    font-size: 5rem;
-  } @else if ($size == '36') {
-    font-size: 3.6rem;
-  } @else if ($size == '32') {
-    font-size: 3.2rem;
-  } @else if ($size == '24') {
+  @if ($size == '42') {
+    font-size: 4.2rem;
+    line-height: 1.4;
+  } @else if ($size == '40') {
+    font-size: 4rem;
+    line-height: 1.2;
+  } @else if ($size == '30') {
+    font-size: 3rem;
+    line-height: 1.5;
+  } @else if ($size == '28') {
+    font-size: 2.8rem;
+    line-height: 1.5;
+  }  @else if ($size == '24') {
     font-size: 2.4rem;
-  } @else if ($size == '20') {
-    font-size: 2rem;
+    line-height: 1.5;
+  } @else if ($size == '18') {
+    font-size: 1.8rem;
+    line-height: 1.5;
+  } @else if ($size == '14') {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  } @else if ($size == '12') {
+    font-size: 1.2rem;
+    line-height: 1.6;
   } @else {
     font-size: $size;
   }
