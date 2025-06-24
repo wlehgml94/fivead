@@ -96,14 +96,9 @@ function imageResize() {
 }
 let checked;
 $(window).on('load resize', function() {
+  winW = $(window).outerWidth();
   initSwiper();
-  if (!checked) {
-    checked = setTimeout(function() {
-      winW = $(window).outerWidth();
-      checkScroll = null;
-      imageResize();
-    }, 10);
-  }
+  imageResize();
   function countUp() {
   $('.counter').each(function() {
     var $this = $(this),
@@ -127,7 +122,13 @@ $(window).on('load resize', function() {
     });
   });
 }
-  var aniFunction = function() {
+$(".pi_popup").on('click',function(){
+  $('.common-agree').show();
+});
+$('.bt_close').on('click',function(){
+  $('.common-agree').hide();
+});
+var aniFunction = function() {
   var $ani = $('.ani_start'); 
 
   $ani.each(function () {
@@ -155,6 +156,7 @@ $(window).on('load resize', function() {
     });
   });
 };
-
-$(window).on('load scroll resize', aniFunction);
+$(window).on('scroll resize', aniFunction);
+aniFunction();
 });
+

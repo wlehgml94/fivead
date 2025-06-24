@@ -101,22 +101,22 @@
         <li>
           <img src="<?= $img_src; ?>main/pc/ico_map.png" class="img_resize" alt="">
           <p>서울 및 수도권 오피스</p>
-          <h3 class="counter" data-count="<?= FA_TOTAL_BUILDNG ?>" data-suffix="개 빌딩+"></h3>
+          <h3 class="counter" data-count="<?= FA_TOTAL_BUILDNG ?>" data-suffix="개 빌딩+"><?= FA_TOTAL_BUILDNG ?>개 빌딩+</h3>
         </li>
         <li>
           <img src="<?= $img_src; ?>main/pc/ico_member.png" class="img_resize" alt="">
           <p>입주 멤버</p>
-          <h3 class="counter" data-count="<?= FA_TOTAL_MEMBER ?>" data-suffix="명+"></h3>
+          <h3 class="counter" data-count="<?= FA_TOTAL_MEMBER ?>" data-suffix="명+"><?= FA_TOTAL_MEMBER ?>명+</h3>
         </li>
         <li>
           <img src="<?= $img_src; ?>main/pc/ico_monthy.png" class="img_resize" alt="">
           <p>월 방문객</p>
-          <h3 class="counter" data-count="<?= FA_MONTHY_MEMBER ?>" data-suffix="명+"></h3>
+          <h3 class="counter" data-count="<?= FA_MONTHY_MEMBER ?>" data-suffix="명+"><?= FA_MONTHY_MEMBER ?>명+</h3>
         </li>
         <li>
           <img src="<?= $img_src; ?>main/pc/ico_company.png" class="img_resize" alt="">
           <p>입주 기업</p>
-          <h3 class="counter" data-count="<?= FA_TOTAL_OFFICE ?>" data-suffix="개+"></h3>
+          <h3 class="counter" data-count="<?= FA_TOTAL_OFFICE ?>" data-suffix="개+"><?= FA_TOTAL_OFFICE ?>개+</h3>
         </li>
       </ul>
       <p class="txt_anno">*<?= FA_UPDATE ?> 기준</p>

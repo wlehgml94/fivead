@@ -94,12 +94,17 @@
 <script src="<?= WEB_URL; ?>/assets/lib/jquery-ui.min.js"></script>
 <script src="<?= WEB_URL; ?>/assets/lib/swiper-bundle.min.js"></script>
 <script src="<?= WEB_URL; ?>/assets/js/common.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script src="<?= WEB_URL; ?>/assets/lib/daterangepicker.min.js" type="text/javascript"></script>
+<script src="<?= WEB_URL; ?>/assets/lib/parallax.min.js" type="text/javascript"></script>
+<script src="<?= WEB_URL; ?>/assets/js/contact.js"></script>
 
 <!-- contactForm -->
 <script src="<?= WEB_URL; ?>/assets/js/contact/contactForm_common.js" type="text/javascript"></script>
 <script src="<?= WEB_URL; ?>/assets/js/contact/contactForm_valid.js" type="text/javascript"></script>
 <!-- GA -->
 <script type="text/javascript" src="https://www.fastfive.co.kr/wp-content/common/gtm_common_ver3.js"></script>
+
 </body>
 
 </html>

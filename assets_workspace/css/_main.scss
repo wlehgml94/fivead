@@ -1,10 +1,10 @@
 .main-contents{
   position: relative;
   .inner{
-    max-width: 132.4rem;
+    max-width: 142.4rem;
     margin: 0 auto;
     @include desktop{
-      padding: 20rem 5rem;
+      padding: 20rem 10rem;
     }
     @include mobile{
       padding: 12rem 3rem;
@@ -91,6 +91,7 @@
       &::after{
         content: '';
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='32' viewBox='0 0 33 32' fill='none'%3E%3Cpath d='M12.6844 8L20.6844 16L12.6844 24' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-size: 3.3rem auto;
         display: flex;
         @include desktop{
           width: 3.3rem;
@@ -98,6 +99,7 @@
         }
         @include mobile{
           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='22' viewBox='0 0 21 22' fill='none'%3E%3Cpath d='M7.69238 5.87183L12.8206 11L7.69238 16.1282' stroke='white' stroke-width='1.7094' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+          background-size: 2rem auto;
           width: 2rem;
           height: 2rem;
         }
@@ -223,7 +225,9 @@
     &2{
       .inner{
         padding-top: 0;
-        padding-right: 0;
+        @include mobile{
+          padding-right: 0;
+        }
       }
       .service_tab{
         display: flex;
@@ -313,7 +317,7 @@
           }
           @include mobile{
             width: calc(50% - .4rem);
-            padding: 2.4rem 1.7rem;
+            padding: 2.4rem 1.7rem 1.3rem;
           }
           p{
             @include desktop{
@@ -655,7 +659,6 @@
                 padding-top: 1rem;
                 padding-bottom: 1rem;
                 padding-left: 0;
-                width: 16.8rem;
               }
               &:first-child{
                 &::before{
@@ -691,11 +694,14 @@
         @include mobile{
           width: 9.2rem;
           height: 9.2rem;
+          display: flex;
+          align-items: center;
         }
       }
       .txt_box{
         @include mobile{
           text-align: left;
+          width: 100%;
         }
       }
     }
@@ -703,9 +709,9 @@
       background: var(--Gradient-Orange1, linear-gradient(90deg, #F4733A 50%, #FCC5B1 100%));
       .inner{
         display: flex;
+        justify-content: space-between;
         @include desktop{
           padding: 18rem 5rem;
-          gap: 17.1rem;
         }
         @include mobile{
           padding: 12rem 3rem;
@@ -720,9 +726,9 @@
         }
       }
       img{
-        margin-top: 2.6rem;
         @include desktop{
           width: 36.4rem;
+          margin-top: 2.6rem;
         }
         @include mobile{
           width: 26.1rem;

@@ -210,6 +210,13 @@ body {
 }
 .common-agree{
   display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include mobile{
+    width: 90%;
+  }
 }
 .agree-container {
   position: relative;
@@ -218,6 +225,7 @@ body {
   flex: 1;
   max-height: calc(100vh - var(--common_inner_y) * 2);
   background-color: $c_primary;
+  box-shadow: 0px 2px 16px 0px rgba(0,0,0,.2);
   @include text(2rem, 700, 140%);
   @include desktop {
     padding: 6rem;
@@ -347,6 +355,11 @@ transition: background-color 0.25s 0.25s ease-in;
   }
 }
 .top_banner{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
   background: $c_bk;
   color: $c_primary;
   a{
