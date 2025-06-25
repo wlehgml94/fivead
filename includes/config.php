@@ -29,7 +29,16 @@
   // 홈페이지 정보
   define('CONTACT_NUMBER', $contact_number);
   define('CONTACT_EMAIL', $contact_email);
-  define('FA_TOTAL', 56); //총 지점수
-  define('FA_TOTAL_OFFICE', 850); //총 건축수
+  define('FA_TOTAL', 59); //총 지점수
+  define('FA_TOTAL_BUILDNG', 850); //총 건축수
+  define('FA_TOTAL_OFFICE', 5000); //총 입주기업
   define('FA_TOTAL_MEMBER', 350000); //총 멤버수
+  define('FA_MONTHY_MEMBER', 1000000); //총 멤버수
+  define('FA_TOTAL_EV', 50); //총 엘리베이터 지점
+  define('FA_TOTAL_EV_DS', 201); //총 엘리베이터 엘리베이터 기기수
+  define('FA_TOTAL_STANDING', 49); //총 스탠딩 기기 지점
+  define('FA_TOTAL_STANDING_DS', 58); //총 스탠딩 기기수
+  define('FA_TOTAL_LOUNGE', 232); //총 라운지 건물
+  define('FA_TOTAL_LOUNGE_DS', 460); //총 라운지 기기수
+  define('FA_UPDATE', '2025년 3월'); //총 라운지 기기수
 ?>

@@ -71,7 +71,7 @@
   <link rel="icon" href="<?= WEB_URL; ?>/assets/images/favicon.png" />
   <link rel="stylesheet" href="<?= WEB_URL; ?>/assets/lib/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="<?= WEB_URL; ?>/assets/css/common.css" rel="prerender" />
-
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   <!-- Start VWO Async SmartCode -->
   <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
 </head>
@@ -84,12 +84,17 @@
   $host = $_SERVER['REQUEST_URI'];
   $page_path = strpos($host, '&') ? strtok($host, '&') : strtok($host, '?');
   $page_name = 'n_main';
- 
+
+  $img_src = WEB_URL.'/assets/images/';
   // formatted_contact_number
   $formatted_contact_number = str_replace('-', '.', CONTACT_NUMBER);
 ?>
   <h2 class="d_hidden" id="pageName"><?= $page_name; ?></h2>
-
+  <div class="top_banner">
+    <a href="/contact_1" class="ga4__topBanner" ga4-text="FIVE AD 서비스 소개서 다운로드">
+      <img src="<?= $img_src ?>common/pc/top_logo.png" alt="">
+      <p>광고 상품 소개서 다운로드</p>
+    </a>
+  </div>
   <main class="fivead-visual-wrapper">
-    <!-- dim -->
-    <div class="dim"></div>
+  <div class="dim"></div>

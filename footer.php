@@ -1,16 +1,20 @@
 
 <footer class="footer">
   <div class="footer-inner">
-    <p>CONTACT US</p>
-    <ul>
-      <li><a href="mailto:<?php echo CONTACT_EMAIL ?>"><?php echo CONTACT_EMAIL; ?></a></li>
-      <li class=""><a href="tel:<?php echo CONTACT_NUMBER; ?>"><?php echo CONTACT_NUMBER; ?></a></li>
-    </ul>
-    <p>CONTACT US</p>
-    <ul>
-      <li>패스트파이브㈜ | 대표 : 김대일</li>
-      <li><a href="/privacy">개인정보처리방침</a></li>
-    </ul>
+    <div class="">
+      <h2>CONTACT US</h2>
+      <ul>
+        <li><a href="mailto:<?php echo CONTACT_EMAIL ?>"><?php echo CONTACT_EMAIL; ?></a></li>
+        <li class=""><a href="tel:<?php echo CONTACT_NUMBER; ?>"><?php echo CONTACT_NUMBER; ?></a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>COMPANY</h2>
+      <ul>
+        <li>패스트파이브㈜ | 대표 : 김대일</li>
+        <li>사업자등록번호 : 151-81-00025 | <a href="/privacy">개인정보처리방침</a></li>
+      </ul>
+    </div>
   </div>
 </footer>
 </main>
@@ -89,14 +93,21 @@
 <script src="<?= WEB_URL; ?>/assets/lib/jquery-3.6.1.min.js"></script>
 <script src="<?= WEB_URL; ?>/assets/lib/jquery-ui.min.js"></script>
 <script src="<?= WEB_URL; ?>/assets/lib/swiper-bundle.min.js"></script>
-<script src="<?= WEB_URL; ?>/assets/js/common.js"></script>
-<script type="module" src="<?= WEB_URL; ?>/assets/js/common_swiper.js"></script>
-
+<? if(is_home() || is_front_page()){ ?>
+  <script src="<?= WEB_URL; ?>/assets/js/main.js"></script>
+<?php } ?>
+<?php if (is_page('contact')) { ?>
+  <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script src="<?= WEB_URL; ?>/assets/lib/daterangepicker.min.js" type="text/javascript"></script>
+  <script src="<?= WEB_URL; ?>/assets/lib/parallax.min.js" type="text/javascript"></script>
+  <script src="<?= WEB_URL; ?>/assets/js/contact.js"></script>
+<?php } ?>
 <!-- contactForm -->
 <script src="<?= WEB_URL; ?>/assets/js/contact/contactForm_common.js" type="text/javascript"></script>
 <script src="<?= WEB_URL; ?>/assets/js/contact/contactForm_valid.js" type="text/javascript"></script>
 <!-- GA -->
 <script type="text/javascript" src="https://www.fastfive.co.kr/wp-content/common/gtm_common_ver3.js"></script>
+
 </body>
 
 </html>

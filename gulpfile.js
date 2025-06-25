@@ -23,6 +23,7 @@ const PATH = {
     FONTS: './assets_workspace/fonts',
     IMAGES: './assets_workspace/images',
     STYLE: './assets_workspace/css',
+    VIDEO: './assets_workspace/video',
     SCRIPT: './assets_workspace/js',
     LIB: './assets_workspace/lib',
     DOWNLOAD: './assets_workspace/download',
@@ -34,6 +35,7 @@ DEST_PATH = {
     FONTS: './assets/fonts',
     IMAGES: './assets/images',
     STYLE: './assets/css',
+    VIDEO: './assets/video',
     SCRIPT: './assets/js',
     LIB: './assets/lib',
     DOWNLOAD: './assets/download',
@@ -134,6 +136,18 @@ gulp.task('nodemon:start', () => {
   });
 });
 
+gulp.task('video', () => {
+  return new Promise(resolve => {
+    gulp.src([
+        PATH.ASSETS.VIDEO + '/*.*',
+        PATH.ASSETS.VIDEO + '/**/*.*', 
+        PATH.ASSETS.VIDEO + '/**/**/*.*'
+      ])
+      .pipe(gulp.dest(DEST_PATH.ASSETS.VIDEO));
+    resolve();
+  });
+});
+
 gulp.task('watch', () => {
   return new Promise(resolve => {
     const scss_watcher = gulp.watch(PATH.ASSETS.STYLE + '/**/*.scss', gulp.series(['scss:compile']));
@@ -141,9 +155,11 @@ gulp.task('watch', () => {
       PATH.ASSETS.IMAGES + '/*.*', 
       PATH.ASSETS.IMAGES + '/**/*.*',
       PATH.ASSETS.IMAGES + '/**/**/*.*'
-    ], gulp.series(['imagemin']));
+    ], gulp.series(['imagemin']))
+    const video_watcher = gulp.watch(PATH.ASSETS.VIDEO + '/*.*', gulp.series(['video']));
     file_management(image_watcher, PATH.ASSETS.IMAGES, DEST_PATH.ASSETS.IMAGES);
     file_management(scss_watcher, PATH.ASSETS.STYLE, DEST_PATH.ASSETS.STYLE); 
+    file_management(video_watcher, PATH.ASSETS.VIDEO, DEST_PATH.ASSETS.VIDEO);
     gulp.watch([PATH.ASSETS.SCRIPT + '/*.js', PATH.ASSETS.SCRIPT + '/**/*.js'], gulp.series(['script:build']));
     gulp.watch(PATH.ASSETS.DOWNLOAD + '/*.*', gulp.series(['download']));
     resolve();
@@ -202,6 +218,7 @@ gulp.task('default',
     'library',
     'imagemin',
     'fonts',
+    'video',
     'browserSync',
     'watch',
     'download',
