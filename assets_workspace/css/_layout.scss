@@ -432,4 +432,44 @@ transition: background-color 0.25s 0.25s ease-in;
     }
   }
 }
+.btn_group{
+  display: flex;
+  @include desktop{
+    margin-top: 3rem;
+  }
+  @include mobile{
+    margin-top: 2rem;
+  }
+  a{
+    background: linear-gradient(90deg, #F4733A 50%, #FCC5B1 100%);
+    color: $c_primary;
+    display: flex;
+    align-items: center;
+    @include text2('24');
+    font-weight: 700;
+    @include desktop{
+      padding: 1.9rem 6.12rem;
+    }
+    @include mobile{
+      padding: 1.1rem 3.6rem;
+      @include text2('14');
+    }
+    &::after{
+      content: '';
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='32' viewBox='0 0 33 32' fill='none'%3E%3Cpath d='M12.6844 8L20.6844 16L12.6844 24' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-size: 3.3rem auto;
+      display: flex;
+      @include desktop{
+        width: 3.3rem;
+        height: 3.2rem;
+      }
+      @include mobile{
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='22' viewBox='0 0 21 22' fill='none'%3E%3Cpath d='M7.69238 5.87183L12.8206 11L7.69238 16.1282' stroke='white' stroke-width='1.7094' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-size: 2rem auto;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+}
 /* 페이지 레이아웃 */

@@ -15,11 +15,31 @@
     @include desktop{
       padding-left: 10.4rem;
     }
-    span{
+    &.__ani{
+      h2{
+        transform: translateY(0);
+        opacity: 1;
+      }
+      span{
+        transform: translateX(0);
+      }
+    }
+    .num{
+      overflow: hidden;
       @include desktop{
         position: absolute;
         top: 0;
         left: 0;
+      }
+      @include mobile{
+        width: fit-content;
+      }
+    }
+    span{
+      display: block;
+      transform: translateX(120px);
+      transition: transform .5s ease;
+      @include desktop{
         font-size: 6.6rem;
         font-weight: 300;
       }
@@ -27,10 +47,12 @@
         @include text2('40');
         font-weight: 300;
         margin-bottom: 0.4rem;
-        display: block;
       }
     }
     h2{
+      opacity: 0;
+      transform: translateY(10%);
+      transition: opacity .5s ease, transform .5s ease;
       @include desktop{
         @include text2('42');
       }
@@ -64,46 +86,6 @@
     @include mobile{
       @include text2('12');
       margin-top: 1.6rem;
-    }
-  }
-  .btn_group{
-    display: flex;
-    @include desktop{
-      margin-top: 3rem;
-    }
-    @include mobile{
-      margin-top: 2rem;
-    }
-    a{
-      background: linear-gradient(90deg, #F4733A 50%, #FCC5B1 100%);
-      color: $c_primary;
-      display: flex;
-      align-items: center;
-      @include text2('24');
-      font-weight: 700;
-      @include desktop{
-        padding: 1.9rem 6.12rem;
-      }
-      @include mobile{
-        padding: 1.1rem 3.6rem;
-        @include text2('14');
-      }
-      &::after{
-        content: '';
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='32' viewBox='0 0 33 32' fill='none'%3E%3Cpath d='M12.6844 8L20.6844 16L12.6844 24' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        background-size: 3.3rem auto;
-        display: flex;
-        @include desktop{
-          width: 3.3rem;
-          height: 3.2rem;
-        }
-        @include mobile{
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='22' viewBox='0 0 21 22' fill='none'%3E%3Cpath d='M7.69238 5.87183L12.8206 11L7.69238 16.1282' stroke='white' stroke-width='1.7094' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-          background-size: 2rem auto;
-          width: 2rem;
-          height: 2rem;
-        }
-      }
     }
   }
   ._prev,._next{
@@ -163,6 +145,13 @@
       position: relative;
       z-index: 1;
       color: $c_primary;
+      transform: translateY(10%);
+      opacity: 0;
+      transition: opacity .5s ease, transform .5s ease-in;
+      &.__ani{
+        opacity: 1;
+        transform: translateY(0);
+      }
       h2{
         @include desktop{
           @include text2('30');
@@ -251,17 +240,21 @@
           @include mobile{
             @include text2('18');
           }
+          &:after{
+            content: '';
+            width: 0;
+            height: .4rem;
+            background: $c_point;
+            display: block;
+            transition: width .3s ease;
+          }
           &._active{
             a{
               color: $c_bk;
               font-weight: 700;
             }
             &:after{
-              content: '';
               width: 100%;
-              height: .4rem;
-              background: $c_point;
-              display: block;
             }
           }
         }
@@ -462,22 +455,26 @@
             @include mobile{
               @include text2('18');
             }
+            &::after{
+              content: '';
+              display: block;
+              width: 0;
+              transition: width .3s ease;
+              background: $c_point;
+              @include desktop{
+                height: .4rem;
+              }
+              @include mobile{
+                height: .2rem;
+              }
+            }
           }
           &._active{
             a{
               color: $c_bk;
               font-weight: 700;
-              &::after{
-                content: '';
-                display: block;
+              &:after{
                 width: 100%;
-                background: $c_point;
-                @include desktop{
-                  height: .4rem;
-                }
-                @include mobile{
-                  height: .2rem;
-                }
               }
             }
           }
@@ -614,7 +611,7 @@
               flex-direction: column;
             }
             @include mobile{
-              padding: 0 3.6rem 0 1.2rem;
+              padding: 0 0 0 1.2rem;
             }
           }
         }
@@ -631,14 +628,15 @@
         }
         &_online{
           background: $c_primary;
-          gap: 3rem;
           @include desktop{
             flex-direction: column;
             padding: 4.6rem 0 6.4rem;
+            gap: 3rem;
           }
           @include mobile{
             flex-direction: row;
             padding: 1.3rem 2.3rem 1.3rem 1.2rem;
+            gap: 2rem;
           }
           .img_box{
             margin: 0 auto;
@@ -701,7 +699,7 @@
       .txt_box{
         @include mobile{
           text-align: left;
-          width: 100%;
+          width: calc(100% - 11.2rem);
         }
       }
     }
@@ -732,6 +730,7 @@
         }
         @include mobile{
           width: 26.1rem;
+          margin-top: 1.4rem;
         }
       }
       .btn_group{
@@ -756,6 +755,9 @@
         }
       }
       .img_box{
+        @include desktop{
+          padding-right: 3rem;
+        }
         img{
           width: 50rem;
         }

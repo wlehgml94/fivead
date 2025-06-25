@@ -39,10 +39,10 @@ $(window).on('load',function(){
 
   const swiper3 = new Swiper('.ds_swiper', {
       loop: true,
-      // autoplay: {
-      //     delay: 2500,
-      //     disableOnInteraction: false,
-      // },
+      autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+      },
       navigation: {
         nextEl: ".ds_next",
         prevEl: ".ds_prev",
@@ -122,16 +122,11 @@ $(window).on('load resize', function() {
     });
   });
 }
-$(".pi_popup").on('click',function(){
-  $('.common-agree').show();
-});
-$('.bt_close').on('click',function(){
-  $('.common-agree').hide();
-});
 var aniFunction = function() {
   var $ani = $('.ani_start'); 
 
   $ani.each(function () {
+    winScroll = $(window).scrollTop();
       var aniStart = $(this).offset().top - winH / 1.2; // 화면 비율에 해당하는 지점
       if (winScroll >= aniStart) {
           $(this).addClass('__ani'); 
@@ -160,3 +155,10 @@ $(window).on('scroll resize', aniFunction);
 aniFunction();
 });
 
+
+$(".pi_popup").on('click',function(){
+  $('.common-agree').show();
+});
+$('.bt_close').on('click',function(){
+  $('.common-agree').hide();
+});

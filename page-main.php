@@ -14,7 +14,7 @@
       <source type="video/mp4" src="<?= $video_src;?>/pc/bg_fivead_250224.mp4">
     </video>
     <div class="inner">
-      <div class="tit">
+      <div class="tit ani_start">
         <h2>고객과 연결되는 광고 플랫폼</h2>
         <img src="<?= $img_src; ?>/main/pc/img_logo.png" alt="">
         <p>국내 1위 공유오피스 패스트파이브에서 <br />당신의 제품과 서비스를 홍보하세요</p>
@@ -26,8 +26,8 @@
   </section>
   <section class="sec1">
     <div class="inner">
-      <div class="tit">
-        <span>01</span>
+      <div class="tit ani_start">
+        <div class="num"><span>01</span></div>
         <h2>파이브애드는 <br />
           국내 1위 공유오피스 <br class="hidden_pc" /><strong>패스트파이브</strong>의 <br />
           <strong>종합 광고 플랫폼</strong>입니다</h2>
@@ -50,8 +50,8 @@
   </section>
   <section class="sec2">
     <div class="inner">
-      <div class="tit">
-        <span>02</span>
+      <div class="tit ani_start">
+        <div class="num"><span>02</span></div>
         <h2><strong>패스트파이브 전 지점</strong>에서 <br />다양한 제품과 서비스 홍보가 <br class="hidden_pc" />가능합니다</h2>
       </div>
       <ul class="service_tab">
@@ -92,8 +92,8 @@
   </section>
   <section class="sec3">
     <div class="inner">
-      <div class="tit">
-        <span>03</span>
+      <div class="tit ani_start">
+        <div class="num"><span>03</span></div>
         <h2><strong>100만 명의 직장인</strong>과 <br class="hidden_pc" /><strong> <?= FA_TOTAL_OFFICE ?>개의 기업</strong>에게 <br class="hidden_mo" />제품과 <br class="hidden_pc" />서비스를 홍보할 수 있습니다</h2>
         <p><strong>매년 3,468시간 </strong><br class="hidden_pc" />당신의 고객이 가장 긴 시간을 보내는 <br class="hidden_pc" />사무 공간에 파이브애드가 있습니다</p>
       </div>
@@ -124,8 +124,8 @@
   </section>
   <section class="sec4">
     <div class="inner">
-      <div class="tit">
-        <span>04</span>
+      <div class="tit ani_start">
+        <div class="num"><span>04</span></div>
         <h2><strong>구매력이 확실한 <br />2040 직장인</strong>에게 노출됩니다</h2>
         <p>패스트파이브의 모든 구성원은 파이브애드의 <br class="hidden_pc" />잠재 고객이 될 수 있습니다</p>
       </div>
@@ -172,8 +172,8 @@
   </section>
   <section class="sec5">
     <div class="inner">
-      <div class="tit">
-        <span>05</span>
+      <div class="tit ani_start">
+        <div class="num"><span>05</span></div>
         <h2><strong>노출과 체험이 동시</strong>에 <br class="hidden_pc" />가능합니다</h2>
         <p>패스트파이브의 다양한 공간과 디스플레이를 <br class="hidden_pc" />활용해 고객에게 다가가세요</p>
       </div>
@@ -279,7 +279,7 @@
   </section>
   <section class="sec6">
     <div class="inner">
-      <div class="tit">
+      <div class="tit ani_start">
         <p>아무나가 아닌 확실한 타겟에게 <br />홍보하고 싶다면?</p>
         <img src="<?= $img_src; ?>/main/pc/footer_logo.png" alt="">
         <div class="btn_group">

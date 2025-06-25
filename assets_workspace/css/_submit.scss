@@ -1,0 +1,42 @@
+.complete-wrapper{
+  .inner{
+    @include desktop{
+      padding: 10rem 10rem 0;
+    }
+    @include mobile{
+      padding: 6rem 0 0;
+    }
+    text-align: center;
+    h2{
+      @include desktop{
+        @include text2('42');
+      }
+      @include mobile{
+        @include text(2.6rem,400,1.4);
+      }
+      strong{
+        color: $c_point;
+      }
+    }
+    p{
+      @include desktop{
+        @include text(2.4rem,400,1.6);
+        margin-top: 3.2rem;
+      }
+      @include mobile{
+        @include text(1.4rem,400,1.6);
+        margin-top: 1.4rem;
+      }
+    }
+    .img_box{
+      max-width: 89.2rem;
+      margin: 2.8rem auto 0;
+    }
+    .btn_group{
+      justify-content: center;
+      a{
+        font-weight: 700;
+      }
+    }
+  }
+}
