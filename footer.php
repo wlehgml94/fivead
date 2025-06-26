@@ -5,14 +5,14 @@
       <h2>CONTACT US</h2>
       <ul>
         <li><a href="mailto:<?php echo CONTACT_EMAIL ?>"><?php echo CONTACT_EMAIL; ?></a></li>
-        <li class=""><a href="tel:<?php echo CONTACT_NUMBER; ?>"><?php echo CONTACT_NUMBER; ?></a></li>
+        <li class=""><a href="tel:<?php echo CONTACT_NUMBER; ?>">+82 2 6959 9221</a></li>
       </ul>
     </div>
     <div>
       <h2>COMPANY</h2>
       <ul>
         <li>패스트파이브㈜ | 대표 : 김대일</li>
-        <li>사업자등록번호 : 151-81-00025 | <a href="/privacy">개인정보처리방침</a></li>
+        <li>사업자등록번호 : 151-81-00025 | <a href="/privacy">개인정보 취급 방침</a></li>
       </ul>
     </div>
   </div>
@@ -93,10 +93,10 @@
 <script src="<?= WEB_URL; ?>/assets/lib/jquery-3.6.1.min.js"></script>
 <script src="<?= WEB_URL; ?>/assets/lib/jquery-ui.min.js"></script>
 <script src="<?= WEB_URL; ?>/assets/lib/swiper-bundle.min.js"></script>
-<? if(is_home() || is_front_page()){ ?>
+<?php if(is_home() || is_front_page() || is_page('main')){ ?>
   <script src="<?= WEB_URL; ?>/assets/js/main.js"></script>
 <?php } ?>
-<?php if (is_page('contact')) { ?>
+<?php if (is_page('contact_1')) { ?>
   <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script src="<?= WEB_URL; ?>/assets/lib/daterangepicker.min.js" type="text/javascript"></script>
   <script src="<?= WEB_URL; ?>/assets/lib/parallax.min.js" type="text/javascript"></script>

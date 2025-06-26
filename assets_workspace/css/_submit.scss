@@ -1,10 +1,10 @@
 .complete-wrapper{
   .inner{
     @include desktop{
-      padding: 10rem 10rem 0;
+      padding: 16.4rem 10rem 0;
     }
     @include mobile{
-      padding: 6rem 0 0;
+      padding: 10.4rem 0 0;
     }
     text-align: center;
     h2{
@@ -34,8 +34,14 @@
     }
     .btn_group{
       justify-content: center;
+      @include desktop{
+        margin-top: 4.8rem;
+      }
       a{
         font-weight: 700;
+        @include desktop{
+          padding: 2.4rem;
+        }
       }
     }
   }

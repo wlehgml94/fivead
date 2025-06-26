@@ -1,11 +1,11 @@
 .fa_contact{
   background: $c_point;
   .inner{
-    padding: 10rem;
+    padding: 12rem 10rem;
     max-width: 121rem;
     margin: 0 auto;
     @include mobile{
-      padding: 3rem;
+      padding: 3.6rem 3rem 20rem;
     }
     .contact_tit{
       display: flex;
@@ -83,20 +83,20 @@
             &_0 {
               z-index: 1;
               &:after {
-                right: 5rem;
+                right: 12.9rem;
                 bottom: 2.5rem;
-                width: 28.8rem;
-                height: 25rem;
+                width: 23.7rem;
+                height: 21.8rem;
                 background: url('../images/contact/pc/window2.png');
               }
             }
             &_1{
               z-index: 2;
               &:after{
-                top: 0;
-                right: 0;
-                width: 232px;
-                height: 174px;
+                top: 2rem;
+                right: 5.5rem;
+                width: 21.9rem;
+                height: 16.5rem;
                 background: url('../images/contact/pc/window.png');
               }
             }
@@ -105,8 +105,8 @@
               &:after {
                 bottom: 1.9rem;
                 left: 0;
-                width: 25.1rem;
-                height: 20.1rem;
+                width: 21.7rem;
+                height: 18.1rem;
                 background: url('../images/contact/pc/person.png');
               }
             }
@@ -115,8 +115,8 @@
               &:after {
                 bottom: 0;
                 right: 9.5rem;
-                width: 6.2rem;
-                height: 7.8rem;
+                width: 5.5rem;
+                height: 7.6rem;
                 background: url('../images/contact/pc/arrow.png');
               }
             }
@@ -164,6 +164,11 @@
           label{
             .mark{
               color: $c_point;
+            }
+            .subTxt{
+              @include desktop{
+                font-size: 1.6rem;
+              }
             }
             @include desktop{
               @include text(1.8rem,700,1.6);
@@ -303,6 +308,11 @@
               @include mobile{
                 @include text2('14');
               }
+              input[type=checkbox]{
+                @include desktop{
+                  margin-right: 0.4rem;
+                }
+              }
               em{
                 color: #aaa;
                 font-style: normal;
@@ -312,7 +322,7 @@
                 @include mobile{
                   display: block;
                   @include text2('12');
-                  margin-left: 2.6rem;
+                  margin-left: 2.9rem;
                 }
               }
             }
@@ -325,6 +335,9 @@
                   margin-left: .2rem;
                 }
               }
+            }
+            .ff_valid_box{
+              top: -4.2rem;
             }
           }
           .contact_radio{
@@ -349,7 +362,7 @@
               .ff_valid_box{
                 @include desktop{
                   bottom: -3.5rem;
-                  left: 7rem;
+                  left: 7.6rem;
                   top: auto;
                 }
               }
@@ -370,7 +383,7 @@
               display: block;
               line-height: 3.4rem;
               @include desktop{
-                width: 4.2rem;
+                width: 4.4rem;
               }
               @include mobile{
                 width: calc(100% - 2.8rem);
@@ -384,6 +397,7 @@
               height: 3.4rem;
               margin-top: 0;
               padding: 0.4rem 0;
+              margin-left: 0.4rem;
               @include mobile{
                 margin-left: 2.8rem;
               }
@@ -410,12 +424,17 @@
         display: flex;
         align-items: flex-start;
         justify-content: center;
+        color: $c_gray_1;
         @include desktop{
           @include text(1.8rem,400,1.6);
         }
         @include mobile{
           @include text(1.4rem,400,1.6);
           padding-left: 2rem;
+        }
+        p{
+          display: flex;
+          align-items: flex-start;
         }
         .wpcf7-not-valid{
           display: inline-flex;
@@ -446,6 +465,8 @@
               height: 2rem;
               border: none;
               background-color: #F0F0F0;
+              border-radius: 2px;
+              border: 1px solid #ddd;
             }
             &:checked{
               &:before{
@@ -472,7 +493,6 @@
             @include text(1.8rem,400,1.6);
           }
           @include mobile{
-            width: 8.5rem;
             @include text(1.4rem,400,1.6);
           }
         }
@@ -485,22 +505,39 @@
           margin-top: 3.2rem;
         }
         label{
-          @include text2('18');
-          font-weight: 700;
+          @include desktop{
+            @include text(1.8rem,700,1.6);
+          }
+          @include mobile{
+            @include text(1.4rem,700,1.6);
+          }
           span{
-            font-size: 1.6rem;
-            line-height: 1.6;
             color: #646464;
             margin-left: 0.8rem;
+            @include desktop{
+              @include text(1.6rem,400,1.6);
+            }
+            @include mobile{
+              @include text(1.4rem,400,1.6);
+            }
           }
         }
         textarea{
           background: $c_gray_3;
           border: 1px solid #ddd;
           border-radius: 8px;
-          padding: 2rem 1.4rem 0;
           width: 100%;
-          margin-top: .6rem;
+          @include desktop{
+            padding: 2rem 1.2rem 0;
+            @include text(1.6rem,400,1.6);
+            height: 14.7rem;
+            margin-top: .6rem;
+          }
+          @include mobile{
+            padding: 1.2rem 1.2rem 0;
+            height: 30.7rem;
+            margin-top: 1.5rem;
+          }
           &::placeholder{
             color: #aaa;
           }
@@ -533,15 +570,31 @@
   }
 }
 .daterangepicker{
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+  @include mobile{
+    border: 1px solid #ddd !important;
+    border-radius: 8px !important;
+  }
   .calendar-table{
     th,td{
-      font-size: 1.6rem !important;
-      width: 3.4rem !important;
-      height: 2.7rem !important;
+      @include desktop{
+        font-size: 1.8rem !important;
+      }
+      @include mobile{
+        font-size: 1.6rem !important;
+      }
+      min-width: 4.4rem !important;
+      height: 3.9rem !important;
       padding: .4rem 0 !important;
+      @include mobile{
+        min-width: 3.4rem !important;
+        height: 3.5rem !important;
+      }
     }
     th{
       font-weight: 700 !important;
+    }
+    td{
     }
   }
   td.in-range{
@@ -557,14 +610,22 @@
       font-size: 2rem !important;
       font-weight: 700 !important;
       width: auto !important;
-      color: #000;
+      color: #000 !important;
+      float: right !important;
+      opacity: 1;
      }
      &.monthselect{
       width: auto !important;
       font-size: 2rem !important;
       font-weight: 700 !important;
-      color: #000;
+      color: #000 !important;
+      float: right !important;
+      margin-right: 33% !important;
+      opacity: 1;
     }
+  }
+  .drp-calendar{
+    max-width: 35.6rem !important;
   }
   @include mobile{
     .drp-calendar.right{

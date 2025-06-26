@@ -38,8 +38,10 @@
 
     let subText1 = $('input[name="your-checkbox_free_text"]');
     let subText2 = $('input[name="your-ad_free_text"]');
+    let subText3 = $('input.wpcf7-free-text');
     $(subText1).attr("placeholder", "직접 입력");
     $(subText2).attr("placeholder", "직접 입력");
+    $(subText3).attr("placeholder", "직접 입력");
     $(subText1).on('keyup', function() {
       if ($(this).val().length > 218) {
         $(this).val($(this).val().substring(0, 218));
@@ -118,3 +120,9 @@
     $("input[name=fieldName").prop('value', "광고상품문의_1");
     $(".ga4__cta-submit").attr("ga4-text", "contact1");
   }
+  $(".pi_popup").on('click',function(){
+    $('.common-agree').show();
+  });
+  $('.bt_close').on('click',function(){
+    $('.common-agree').hide();
+  });

@@ -129,13 +129,13 @@
     overflow: hidden;
     .video{
       position: absolute;
-      top: 0;
-      right: 0;
+      top: -150px;
+      right: -10px;
       z-index: 0;
     }
     .inner{
       @include desktop{
-        padding: 26.2rem 5rem 10.8rem;
+        padding: 26.2rem 10rem 10.8rem;
       }
       @include mobile{
         padding: 32rem 3rem 7.3rem;
@@ -147,6 +147,7 @@
       color: $c_primary;
       transform: translateY(10%);
       opacity: 0;
+      padding-left: 0;
       transition: opacity .5s ease, transform .5s ease-in;
       &.__ani{
         opacity: 1;
@@ -231,6 +232,10 @@
           white-space: nowrap;
           overflow: auto;
           padding-right: 3rem;
+          -ms-overflow-style: none;
+          &::-webkit-scrollbar{
+            display:none;
+          }
         }
         li{
           color: $c_gray_2;
@@ -304,6 +309,8 @@
           display: flex;
           flex-direction: column;
           align-items: center;
+          word-break: keep-all;
+          text-align: center;
           @include desktop{
             flex: 1;
             padding: 5rem 3rem 6.6rem;
@@ -315,6 +322,7 @@
           p{
             @include desktop{
               @include text2('24');
+              margin-top: 2rem;
             }
             @include mobile{
               @include text2('14');
@@ -407,14 +415,12 @@
             strong{
               color: $c_point;
               @include desktop{
-                @include text2('42');
-                font-weight: 700;
+                @include text(4.2rem,700,1.4);
               }
               @include mobile{
-                @include text2('24');
-                font-weight: 700;
+                @include text(2.8rem,700,1.4);
                 display: block;
-                margin-top: -7px;
+                margin-top: -4px;
               }
             }
           }
@@ -445,6 +451,10 @@
           white-space: nowrap;
           overflow: auto;
           margin-top: 3.2rem;
+          -ms-overflow-style: none;
+          &::-webkit-scrollbar{
+            display:none;
+          }
         }
         li{
           a{
@@ -582,12 +592,19 @@
               flex-direction: row;
               gap: 2rem;
              }
+             .txt_box{
+               @include desktop{
+                 margin-top: 2.4rem;
+               }
+             }
           }
           h3{
             color: $c_point;
             @include desktop{
               @include text2('30');
               font-weight: 700;
+              text-align: center;
+              word-break: keep-all;
             }
             @include mobile{
               @include text2('18');
@@ -598,6 +615,8 @@
             @include desktop{
               @include text2('24');
               margin-top: 0.8rem;
+              text-align: center;
+              word-break: keep-all;
             }
             @include mobile{
               @include text2('14');
@@ -672,7 +691,7 @@
                 @include desktop{
                   width: 1px;
                   height: 10rem;
-                  background: $c_gray_1;
+                  background: $c_gray_2;
                 }
                 @include mobile{
                   width: 100%;
@@ -704,12 +723,17 @@
       }
     }
     &6{
-      background: var(--Gradient-Orange1, linear-gradient(90deg, #F4733A 50%, #FCC5B1 100%));
+      @include desktop{
+        background: var(--Gradient-Orange1, linear-gradient(90deg, #F4733A 50%, #FCC5B1 100%));
+      }
+      @include mobile{
+        background: linear-gradient(220deg, #F4733A 47.32%, #FCC5B1 90.37%);
+      }
       .inner{
         display: flex;
         justify-content: space-between;
         @include desktop{
-          padding: 18rem 5rem;
+          padding: 18rem 10rem;
         }
         @include mobile{
           padding: 12rem 3rem;
@@ -722,15 +746,23 @@
         p{
           margin-top: 0;
         }
-      }
-      img{
-        @include desktop{
-          width: 36.4rem;
-          margin-top: 2.6rem;
+        &.__ani{
+          .btn_group{
+            a{
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
         }
-        @include mobile{
-          width: 26.1rem;
-          margin-top: 1.4rem;
+        img{
+          @include desktop{
+            width: 36.4rem;
+            margin-top: 2.6rem;
+          }
+          @include mobile{
+            width: 26.1rem;
+            margin-top: 1.4rem;
+          }
         }
       }
       .btn_group{
@@ -744,6 +776,9 @@
           background: $c_primary;
           color: $c_point;
           font-weight: 700;
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity .5s ease, transform .5s ease;
           &:after{
             @include desktop{
               background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Cpath d='M12 8.00049L20 16.0005L12 24.0005' stroke='%23F4733A' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");

@@ -10,8 +10,8 @@
 <!-- main-contents  -->
 <div class="main-contents">
   <section class="visual">
-    <video class="video img_resize" autoplay="" muted="" loop="" playsinline="">
-      <source type="video/mp4" src="<?= $video_src;?>/pc/bg_fivead_250224.mp4">
+    <video class="video" autoplay="" muted="" loop="" playsinline="">
+      <source type="video/mp4" class="img_resize" src="<?= $video_src;?>pc/bg_fivead_250224.mp4">
     </video>
     <div class="inner">
       <div class="tit ani_start">
@@ -19,7 +19,7 @@
         <img src="<?= $img_src; ?>/main/pc/img_logo.png" alt="">
         <p>국내 1위 공유오피스 패스트파이브에서 <br />당신의 제품과 서비스를 홍보하세요</p>
         <div class="btn_group">
-          <a href="#">광고 상품 문의</a>
+          <a class="ga4__cta_top" href="/contact_1">광고 상품 문의</a>
         </div>
     </div>
     </div>
@@ -55,7 +55,7 @@
         <h2><strong>패스트파이브 전 지점</strong>에서 <br />다양한 제품과 서비스 홍보가 <br class="hidden_pc" />가능합니다</h2>
       </div>
       <ul class="service_tab">
-        <li class="_active"><a href="#">교육</a></li>
+        <li class="_active"><a href="javascript:;">교육</a></li>
         <li><a href="javascript:;">뷰티</a></li>
         <li><a href="javascript:;">가전</a></li>
         <li><a href="javascript:;">F&B</a></li>
@@ -213,7 +213,7 @@
                     <img src="<?= $img_src; ?>main/pc/ico_ds3.png" class="img_resize" alt="">
                   </div>
                   <div class="txt_box">
-                    <h3>라운지 디지털 DS</h3>
+                    <h3>라운지 DS</h3>
                     <p>서울/수도권 <?= FA_TOTAL_LOUNGE ?>개 건물 내 <br /><?= FA_TOTAL_LOUNGE_DS ?>기</p>
                   </div>
                 </li>
@@ -283,7 +283,7 @@
         <p>아무나가 아닌 확실한 타겟에게 <br />홍보하고 싶다면?</p>
         <img src="<?= $img_src; ?>/main/pc/footer_logo.png" alt="">
         <div class="btn_group">
-          <a href="#">광고 상품 문의</a>
+          <a class="ga4__cta_bottom" href="/contact_1">광고 상품 문의</a>
         </div>
       </div>
       <div class="img_box">

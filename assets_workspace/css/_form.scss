@@ -37,7 +37,7 @@ span.wpcf7-not-valid-tip {
   white-space: nowrap;
   @include desktop{
     right: 0;
-    top: -4.2rem;
+    top: -4.9rem;
     @include text(1.6rem, 400, 1.7);
   }
   @include mobile{
@@ -69,12 +69,13 @@ span.wpcf7-not-valid-tip {
 /* 보내기 버튼 활성화 */
 .contact_submit {
   position: relative;
-  .bt-base {
+  input{
+    pointer-events: none;
+  }
+  input {
     &.active {
-      input {
-        cursor: pointer;
-        pointer-events: painted;
-      }
+      cursor: pointer;
+      pointer-events: painted;
     }
   }
 }

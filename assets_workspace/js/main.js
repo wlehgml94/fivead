@@ -109,7 +109,7 @@ $(window).on('load resize', function() {
       countNum: countTo
     },
     {
-      duration: 2000,
+      duration: 1200,
       easing: 'swing',
       step: function() {
         var formattedNum = Math.floor(this.countNum).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -153,12 +153,4 @@ var aniFunction = function() {
 };
 $(window).on('scroll resize', aniFunction);
 aniFunction();
-});
-
-
-$(".pi_popup").on('click',function(){
-  $('.common-agree').show();
-});
-$('.bt_close').on('click',function(){
-  $('.common-agree').hide();
 });

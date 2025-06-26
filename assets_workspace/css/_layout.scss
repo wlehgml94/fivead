@@ -378,6 +378,9 @@ transition: background-color 0.25s 0.25s ease-in;
         height: 1.2rem;
       }
     }
+    @include desktop{
+      @include text(2.4rem,400,1.6);
+    }
     @include mobile{
       @include text2('14');
     }
@@ -403,12 +406,10 @@ transition: background-color 0.25s 0.25s ease-in;
     }
     h2{
       @include desktop{
-        @include text2('24');
-        font-weight: 700;
+        @include text(2.4rem,700,1.5);
       }
       @include mobile{
-        @include text2('14');
-        font-weight: 700;
+        @include text(1.4rem,700,1.5);
       }
     }
     ul{
@@ -417,14 +418,19 @@ transition: background-color 0.25s 0.25s ease-in;
         @include mobile{
           font-size: 1.2rem;
           line-height: 1.6;
-          &+li{
+        }
+        &+li{
+          @include desktop{
+            margin-top: 0.4rem;
+          }
+          @include mobile{
             margin-top: 0.2rem;
           }
         }
         a{
           font-weight: 700;
           @include desktop{
-            @include text2('18');
+            @include text(1.8rem,700,1.6);
             margin-top: .4rem;
           }
         }
