@@ -1,11 +1,11 @@
 .fa_contact{
   background: $c_point;
   .inner{
-    padding: 12rem 10rem;
+    padding: 18rem 10rem 12rem;
     max-width: 121rem;
     margin: 0 auto;
     @include mobile{
-      padding: 3.6rem 3rem 20rem;
+      padding: 7.9rem 3rem 20rem;
     }
     .contact_tit{
       display: flex;
@@ -84,7 +84,7 @@
               z-index: 1;
               &:after {
                 right: 12.9rem;
-                bottom: 2.5rem;
+                bottom: 2.2rem;
                 width: 23.7rem;
                 height: 21.8rem;
                 background: url('../images/contact/pc/window2.png');
@@ -128,7 +128,7 @@
   .contact-contents{
     background: $c_primary;
     @include desktop{
-      padding: 4rem;
+      padding: 4rem 4rem 6rem;
       margin-top: 4.2rem;
       border-radius: 3.2rem;
     }
@@ -276,11 +276,16 @@
                 display: block;
                 position: absolute;
                 right: 1.8rem;
-                top: 0.7rem;
                 width: 2rem;
                 height: 2.1rem;
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='21' viewBox='0 0 20 21' fill='none'%3E%3Cpath d='M4 8.5L10 14.5L16 8.5' stroke='%23ACACAC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
                 background-size: 2rem 2.1rem;
+                @include desktop{
+                  top: 0.7rem;
+                }
+                @include mobile{
+                  top: 0.5rem;
+                }
               }
             }
           }
@@ -289,11 +294,10 @@
               &:after{
                 content: '만 원';
                 display: block;
-                @include text2('16');
-                font-weight: 700;
+                @include text(1.6rem,700,1.6);
                 color: #000;
                 position: absolute;
-                top: calc(50% + 0.8rem);
+                top: 1.4rem;
                 right: .8rem;
                 transform: translate(-50%, -50%);
               }
@@ -375,8 +379,8 @@
             }
             .ff_valid_box{
               @include mobile{
-                bottom: -3rem;
-                left: 2.9rem;
+                margin-left: 2.9rem;
+                margin-top: 0;
               }
             }
             .wpcf7-list-item-label{
@@ -420,21 +424,25 @@
         }
       }
       .contact_personal_info{
-        margin-top: 4.2rem;
         display: flex;
         align-items: flex-start;
         justify-content: center;
         color: $c_gray_1;
         @include desktop{
           @include text(1.8rem,400,1.6);
+          margin-top: 4.2rem;
         }
         @include mobile{
           @include text(1.4rem,400,1.6);
           padding-left: 2rem;
+          margin-top: 3rem;
         }
         p{
           display: flex;
           align-items: flex-start;
+        }
+        .wpcf7-list-item{
+          margin-left: 0;
         }
         .wpcf7-not-valid{
           display: inline-flex;
@@ -442,8 +450,13 @@
             margin-bottom: 2.9rem;
           }
         }
-        .wpcf7-list-item{
-          margin-left: 0;
+        &.o_verify{
+          .wpcf7-not-valid{
+            display: inline-flex;
+            @include desktop{
+              margin-bottom: 0;
+            }
+          }
         }
         input{
           &[type=checkbox] {
@@ -489,6 +502,7 @@
         }
         .pi_popup{
           color: $c_point;
+          vertical-align: top;
           @include desktop{
             @include text(1.8rem,400,1.6);
           }
@@ -528,7 +542,7 @@
           border-radius: 8px;
           width: 100%;
           @include desktop{
-            padding: 2rem 1.2rem 0;
+            padding: 1.2rem 2rem 0;
             @include text(1.6rem,400,1.6);
             height: 14.7rem;
             margin-top: .6rem;
@@ -537,6 +551,7 @@
             padding: 1.2rem 1.2rem 0;
             height: 30.7rem;
             margin-top: 1.5rem;
+            @include text(1.4rem,400,1.6);
           }
           &::placeholder{
             color: #aaa;
@@ -556,9 +571,12 @@
           position: static;
           width: fit-content;
           padding: 1.3rem 6.2rem;
-          margin: 4.2rem auto 0;
+          @include desktop{
+            margin: 4.2rem auto 0;
+          }
           @include mobile{
             width: 100%;
+            margin: 3rem auto 0;
           }
         }
         .active{
@@ -571,14 +589,44 @@
 }
 .daterangepicker{
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+  &:before,&:after{
+    display: none !important;
+  }
+  @include desktop{
+    border: 1px solid #acacac !important;
+  }
   @include mobile{
     border: 1px solid #ddd !important;
     border-radius: 8px !important;
   }
+  td.off,td.off.in-range{
+    color: #acacac !important;
+  }
   .calendar-table{
+    .prev{
+      span{
+        width: 2rem;
+        height: 2rem;
+        border:none !important;
+        transform: rotate(0) !important;
+        vertical-align: middle;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M12 4L6 10L12 16' stroke='%23ACACAC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      }
+    }
+    .next{
+      span{
+        width: 2rem;
+        height: 2rem;
+        border:none !important;
+        transform: rotate(0) !important;
+        vertical-align: middle;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='22' viewBox='0 0 21 22' fill='none'%3E%3Cpath d='M8.98405 17.6826L14.9922 11.2062L8.98405 4.72976' stroke='%23ACACAC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      }
+    }
     th,td{
       @include desktop{
         font-size: 1.8rem !important;
+        height: 4.7rem !important;
       }
       @include mobile{
         font-size: 1.6rem !important;
@@ -594,8 +642,6 @@
     th{
       font-weight: 700 !important;
     }
-    td{
-    }
   }
   td.in-range{
     background: #FDE3D8 !important;
@@ -607,25 +653,45 @@
     appearance:none;
     &.yearselect {
       float: left !important;
-      font-size: 2rem !important;
-      font-weight: 700 !important;
       width: auto !important;
       color: #000 !important;
       float: right !important;
+      font-weight: 700 !important;
       opacity: 1;
+      @include desktop{
+        font-size: 2rem !important;
+      }
+      @include mobile{
+        font-size: 1.8rem !important;
+      }
      }
      &.monthselect{
       width: auto !important;
-      font-size: 2rem !important;
       font-weight: 700 !important;
       color: #000 !important;
       float: right !important;
       margin-right: 33% !important;
       opacity: 1;
+      @include desktop{
+        font-size: 2rem !important;
+      }
+      @include mobile{
+        margin-right: 28% !important;
+        font-size: 1.8rem !important;
+      }
     }
   }
   .drp-calendar{
     max-width: 35.6rem !important;
+    &.left{
+      padding: 3.2rem 0 3.2rem 3.2rem !important;
+      @include mobile{
+        padding: 0.8rem 1.8rem !important;
+      }
+    }
+    &.right{
+      padding: 3.2rem !important;
+    }
   }
   @include mobile{
     .drp-calendar.right{

@@ -36,21 +36,25 @@
       $(this).val(picker.startDate.format('YYYY.MM.DD(dddd)') + ' ~ ' + picker.endDate.format('YYYY.MM.DD(dddd)'));
     });
 
+    $('input[name="_wpcf7_free_text_your-checkbox"]').attr('name', 'your-checkbox_free_text');
+    $('input[name="_wpcf7_free_text_your-ad"]').attr('name', 'your-ad_free_text');
     let subText1 = $('input[name="your-checkbox_free_text"]');
     let subText2 = $('input[name="your-ad_free_text"]');
-    let subText3 = $('input.wpcf7-free-text');
+    // let subText3 = $('input.wpcf7-free-text');
     $(subText1).attr("placeholder", "직접 입력");
     $(subText2).attr("placeholder", "직접 입력");
-    $(subText3).attr("placeholder", "직접 입력");
-    $(subText1).on('keyup', function() {
+    // $(subText3).attr("placeholder", "직접 입력");
+    $(subText1).on('input', function() {
       if ($(this).val().length > 218) {
         $(this).val($(this).val().substring(0, 218));
       }
+      $('.has-free-text input[name="your-checkbox\\[\\]"]').val("그 외" + $(this).val());
     });
-    $(subText2).on('keyup', function() {
+    $(subText2).on('input', function() {
       if ($(this).val().length > 250) {
         $(this).val($(this).val().substring(0, 250));
       }
+      $(".has-free-text input[name='your-ad']").val('기타'+$(this).val());
     });
 
     $('input[name="your-checkbox[]"]').each(function() {
@@ -79,7 +83,7 @@
         locale: {
           cancelLabel: 'Clear',
           "separator": " ~ ",
-          "monthNames": ["01.", "02.", "03.", "04.", "05.", "06.", "07.", "08.", "09.", "10.", "11.", "12."],
+          "monthNames": [". 01", ". 02", ". 03", ". 04", ". 05", ". 06", ". 07", ". 08", ". 09", ". 10", ". 11", ". 12"],
           "format": 'YYYY.MM.DD'
         },
         linkedCalendars: false
@@ -98,6 +102,7 @@
         $(this).val(picker.startDate.format('YYYY.MM.DD(dddd)') + ' ~ ' + picker.endDate.format('YYYY.MM.DD(dddd)'));
       });
     }
+
   });
   const path = $("input[name=location]"); // 필드 선택
   let urlParams = window.location.search; // ? 파라미터 가져오기

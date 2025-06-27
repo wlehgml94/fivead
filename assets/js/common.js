@@ -1,0 +1,1 @@
+let winW=$(window).outerWidth(),checkMo=960;function imageResize(){winW=$(window).outerWidth(),$("img.img_resize").each(function(){var i=$(this).attr("src");winW<=checkMo?$(this).attr("src",i.replace("/pc/","/mo/")):$(this).attr("src",i.replace("/mo/","/pc/"))})}$(window).on("load resize",function(){imageResize()});

@@ -359,7 +359,7 @@ transition: background-color 0.25s 0.25s ease-in;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 4;
   background: $c_bk;
   color: $c_primary;
   a{
@@ -367,7 +367,12 @@ transition: background-color 0.25s 0.25s ease-in;
     gap: .8rem;
     justify-content: center;
     align-items: center;
-    padding: 1.1rem;
+    @include desktop{
+      padding: 1.1rem;
+    }
+    @include mobile{
+      padding: 0.9rem;
+    }
     img{
       @include desktop{
         width: 10.5rem;
@@ -390,10 +395,10 @@ transition: background-color 0.25s 0.25s ease-in;
   .footer-inner{
     display: flex;
     gap: 2.4rem;
-    max-width: 116.5rem;
+    max-width: 142.4rem;
     margin: 0 auto;
     @include desktop{
-      padding: 8rem 5rem;
+      padding: 8rem 10rem 8rem 20.4rem;
     }
     @include mobile{
       flex-direction: column;
@@ -409,13 +414,16 @@ transition: background-color 0.25s 0.25s ease-in;
         @include text(2.4rem,700,1.5);
       }
       @include mobile{
-        @include text(1.4rem,700,1.5);
+        @include text(1.4rem,700,1.6);
       }
     }
     ul{
-      margin-top: 1rem;
       li{
+        @include desktop{
+          margin-top: 1rem;
+        }
         @include mobile{
+          margin-top: 0.4rem;
           font-size: 1.2rem;
           line-height: 1.6;
         }
@@ -454,7 +462,7 @@ transition: background-color 0.25s 0.25s ease-in;
     @include text2('24');
     font-weight: 700;
     @include desktop{
-      padding: 1.9rem 6.12rem;
+      padding: 1.9rem 5.8rem;
     }
     @include mobile{
       padding: 1.1rem 3.6rem;
@@ -475,6 +483,26 @@ transition: background-color 0.25s 0.25s ease-in;
         width: 2rem;
         height: 2rem;
       }
+    }
+  }
+}
+.error-page-main{
+  .inner{
+    padding: 18rem 10rem;
+    text-align: center;
+    h1{
+      @include desktop{
+        @include text(4.2rem,700,1.6);
+      }
+      @include mobile{
+        @include text(3rem,700,1.6);
+      }
+    }
+    p{
+      @include text2('18');
+    }
+    .btn_group{
+      justify-content: center;
     }
   }
 }

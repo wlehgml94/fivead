@@ -197,7 +197,7 @@ jQuery(document).ready(function() {
         //
             // ******
             // 텍스트필드 광고 상품
-            let checkbox_text = $('input.wpcf7-free-text');
+            let checkbox_text = $('.contact_check input.wpcf7-free-text');
             //let checkbox_free = $this.parent().hasClass('has-free-text');
             //console.log($(checkbox_text).prop('disabled'));
             //if($(checkbox_text).prop('disabled')){
@@ -205,7 +205,7 @@ jQuery(document).ready(function() {
                 $(checkbox_text).on('keyup focus propertychange paste input',function() {
                     let $this = $(this);
                     $(this).addClass('o_valid');
-                    let validText_complete = `<div class="ff_valid_box sub_valid"><p class="ff_valid_text">광고 상품을 입력해 주세요</p></div>`;
+                    let validText_complete = `<div class="ff_valid_box sub_valid"><p class="ff_valid_text">선택해 주세요</p></div>`;
                     
                     if ($this.val().length <= 0) {
                         $ff_validBox($this, validText_complete);
@@ -223,45 +223,19 @@ jQuery(document).ready(function() {
 		// }
 	});
 
-	// 체크박스 : 일반
-	$('.contact_radio input[type=radio]').on('click', function (event) {
-		let $this = $(this);
-		let radio_input = $this.closest($('.contact_item')).find('input');
-		if (radio_input.hasClass('checked')) {
-			$valid_on($this);
-        } else {
-			// $valid_off($this);
-		}
-		$('.contact_ad').addClass('o_verify');
-		let radio_text = $('input.wpcf7-free-text');
-			if($('.contact_radio .has-free-text input').hasClass('checked')){
-				$(radio_text).on('keyup focus propertychange paste input',function() {
-					let $this = $(this);
-					$(this).addClass('o_valid');
-					let validText_complete = `<div class="ff_valid_box sub_valid"><p class="ff_valid_text">광고 상품을 입력해 주세요</p></div>`;
-					
-					if ($this.val().length <= 0) {
-						$ff_validBox($this, validText_complete);
-					}
-				});
-			}else{
-				$(radio_text).next().remove();
-				$(radio_text).removeClass('o_valid');
-				$(radio_text).removeClass('o_verify');
-				$(radio_text).val(null);
-			}
-	});
-
 	// ******
 	// 텍스트필드 알게 된 경로
-    $('.contact_radio input[value="선택안함"]').attr('checked', true);
+	$('.contact_radio input[type=radio]').on('click', function (event) {
+		$('.contact_ad').addClass('o_verify');
+	});
+	$('.contact_radio input[value="선택안함"]').attr('checked', true);
 	$('.contact_radio input[name="your-ad"]').on('click', function (event) {
 		let radio_text = $('input[name="your-ad_free_text"]');
 		if($(radio_text).prop('disabled')){
 			$(radio_text).on('keyup focus propertychange paste input',function() {
 				let $this = $(this);
 				$(this).addClass('o_valid');
-				let validText_complete = `<div class="ff_valid_box sub_valid"><p class="ff_valid_text">FIVE AD를 알게된 경로를 입력해 주세요</p></div>`;
+				let validText_complete = `<div class="ff_valid_box sub_valid"><p class="ff_valid_text">입력해 주세요</p></div>`;
 				
 				if ($this.val().length <= 0) {
 					$ff_validBox($this, validText_complete);
@@ -271,7 +245,7 @@ jQuery(document).ready(function() {
 			$(radio_text).next().remove();
 			$(radio_text).removeClass('o_valid');
 			$(radio_text).removeClass('o_verify');
-            $(radio_text).val(null);
+			$(radio_text).val(null);
 		}
 	});
 	// *****
@@ -279,12 +253,13 @@ jQuery(document).ready(function() {
 	$('.contact_personal_info input').on('click', function (event) {
     let $this = $(this);
 
+		let pop = $('.pi_popup');
     // 체크박스 상태 토글
     $this.toggleClass('checked');
 
     if (event.target.checked) {
         // 체크된 경우
-        $($this).next().remove();
+        $(pop).next().remove();
         $valid_on($this);
         
         // value 값을 true로 설정
@@ -293,7 +268,7 @@ jQuery(document).ready(function() {
         // 체크 해제된 경우
         $valid_off($this);
         let validText_complete = `<div class="ff_valid_box personal_info_valid"><p class="ff_valid_text">이 항목은 필수 입력값입니다.</p></div>`;
-        $ff_validBox($this, validText_complete);
+        $ff_validBox(pop, validText_complete);
 
         // value 값을 false로 설정
         $this.val('false');

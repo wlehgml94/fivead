@@ -31,17 +31,18 @@ span.wpcf7-not-valid-tip {
 }
 /* 유효성 안내 메시지 */
 .ff_valid_box {
-  position: absolute;
-  margin: 0;
   color: $c_err;
   white-space: nowrap;
   @include desktop{
     right: 0;
+    position: absolute;
+    margin: 0;
     top: -4.9rem;
     @include text(1.6rem, 400, 1.7);
   }
   @include mobile{
-    bottom: -5rem;
+    margin-top: 1rem;
+    position: static;
     @include text(1.2rem,400,1.6);
   }
 }
@@ -50,11 +51,13 @@ span.wpcf7-not-valid-tip {
     top: auto;
     @include desktop{
       left: 18.9rem;
-      bottom: -2.9rem;
+      bottom: -3.9rem;
     }
     @include mobile{
-      left: 0;
-      bottom: -4.5rem;
+      .ff_valid_text{
+        justify-content: center;
+        margin-left: -2.2rem;
+      }
     }
   }
 }

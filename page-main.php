@@ -10,8 +10,11 @@
 <!-- main-contents  -->
 <div class="main-contents">
   <section class="visual">
-    <video class="video" autoplay="" muted="" loop="" playsinline="">
-      <source type="video/mp4" class="img_resize" src="<?= $video_src;?>pc/bg_fivead_250224.mp4">
+    <video class="video hidden_mo" autoplay="" muted="" loop="" playsinline="">
+      <source type="video/mp4" src="<?= $video_src;?>pc/bg_fivead_250224.mp4">
+    </video>
+    <video class="video hidden_pc" autoplay="" muted="" loop="" playsinline="">
+      <source type="video/mp4" src="<?= $video_src;?>mo/bg_fivead_250224.mp4">
     </video>
     <div class="inner">
       <div class="tit ani_start">
@@ -36,8 +39,8 @@
       <div class="img_box hidden_mo">
         <img src="<?= $img_src; ?>main/pc/sec_1.jpg" alt="">
       </div>
-      <div class="logo_wrap">
-        <div class="logo_swiper hidden_pc">
+      <div class="logo_wrap hidden_pc">
+        <div class="logo_swiper">
           <div class="swiper-wrapper">
             <img class="swiper-slide" src="<?= $img_src; ?>main/mo/sec_1_1.png" class="hidden_pc" alt="">
             <img class="swiper-slide" src="<?= $img_src; ?>main/mo/sec_1_2.png" class="hidden_pc" alt="">
@@ -94,7 +97,7 @@
     <div class="inner">
       <div class="tit ani_start">
         <div class="num"><span>03</span></div>
-        <h2><strong>100만 명의 직장인</strong>과 <br class="hidden_pc" /><strong> <?= FA_TOTAL_OFFICE ?>개의 기업</strong>에게 <br class="hidden_mo" />제품과 <br class="hidden_pc" />서비스를 홍보할 수 있습니다</h2>
+        <h2><strong>100만 명의 직장인</strong>과 <br class="hidden_pc" /><strong> <?= number_format(FA_TOTAL_OFFICE) ?>개의 기업</strong>에게 <br class="hidden_mo" />제품과 <br class="hidden_pc" />서비스를 홍보할 수 있습니다</h2>
         <p><strong>매년 3,468시간 </strong><br class="hidden_pc" />당신의 고객이 가장 긴 시간을 보내는 <br class="hidden_pc" />사무 공간에 파이브애드가 있습니다</p>
       </div>
       <ul class="ani_start">
@@ -221,7 +224,7 @@
             </li>
             <li class="lst_ds swiper-slide">
               <p>이용 인구가 가장 많은 라운지에서 제품과 서비스를 <br class="hidden_pc" />경험시키세요</p>
-              <span class="sub_txt">* 총 <?= FA_TOTAL; ?>개 건물 홍보 가능</span>
+              <span class="sub_txt">*총 <?= FA_TOTAL; ?>개 건물 홍보 가능</span>
               <ul class="ds_offline ds_cont">
                 <li>
                   <div class="img_box">
