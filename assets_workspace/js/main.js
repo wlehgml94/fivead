@@ -82,10 +82,8 @@ function initSwiper() {
 initSwiper();
 
 let checked;
-$(window).on('load resize', function() {
-  winW = $(window).outerWidth();
-  initSwiper();
-  function countUp() {
+
+function countUp() {
   $('.counter').each(function() {
     var $this = $(this),
         countTo = $this.attr('data-count'),
@@ -108,6 +106,10 @@ $(window).on('load resize', function() {
     });
   });
 }
+$(window).on('load resize', function() {
+  winW = $(window).outerWidth();
+  initSwiper();
+});
 var aniFunction = function() {
   var $ani = $('.ani_start'); 
 
@@ -147,3 +149,4 @@ var aniFunction = function() {
     }, 200);
   });
 };
+$(window).on('scroll resize', aniFunction);

@@ -101,10 +101,11 @@
     position: absolute;
     cursor: pointer;
     @include desktop{
-      width: 2.4rem;
-      height: 5.4rem;
+      width: 6.6rem;
+      height: 9.2rem;
+      padding: 1.9rem;
       background: url(../images/common/pc/ico_arrow.png) 50% 50% no-repeat;
-      background-size: contain;
+      background-size: 2.8rem 5.4rem;
     }
     @include mobile{
       width: 3rem;
@@ -115,22 +116,23 @@
   }
   ._prev{
     @include desktop{
-      left: 3.8rem;
-      top: calc(50% - 2.7rem);
+      left: 1.9rem;
+      top: calc(50% - 4.6rem);
     }
     @include mobile{
       left: -3rem;
-      top: calc(50% - 3rem);
+      top: calc(50% - 1.5rem);
     }
   }
   ._next{
-    top: calc(50% - 2.7rem);
     transform: rotate(180deg);
     @include desktop{
-      right: -6.6rem;
+      right: -8.5rem;
+      top: calc(50% - 4.6rem);
     }
     @include mobile{
       right: -3rem;
+      top: calc(50% - 1.5rem);
     }
   }
   .visual{
@@ -225,9 +227,6 @@
         position: relative;
         .logo_swiper{
           overflow: hidden;
-        }
-        ._next{
-          top: calc(50% - 3rem);
         }
       }
     }
@@ -325,7 +324,6 @@
         ._next{
           @include mobile{
             right: 0;
-            top: calc(50% - 3rem);
           }
         }
       }
@@ -633,7 +631,7 @@
           }
           ._prev,._next{
             top: auto;
-            bottom: 15rem;
+            bottom: 13rem;
             z-index: 1;
           }
         }
