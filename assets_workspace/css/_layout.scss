@@ -395,10 +395,10 @@ transition: background-color 0.25s 0.25s ease-in;
   .footer-inner{
     display: flex;
     gap: 2.4rem;
-    max-width: 142.4rem;
+    max-width: 135.6rem;
     margin: 0 auto;
     @include desktop{
-      padding: 8rem 10rem 8rem 20.4rem;
+      padding: 8rem 6.6rem 8rem 17rem;
     }
     @include mobile{
       flex-direction: column;
@@ -488,7 +488,7 @@ transition: background-color 0.25s 0.25s ease-in;
 }
 .error-page-main{
   .inner{
-    padding: 18rem 10rem;
+    padding: 18rem 6.6rem;
     text-align: center;
     h1{
       @include desktop{

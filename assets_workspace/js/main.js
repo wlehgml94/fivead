@@ -146,8 +146,4 @@ var aniFunction = function() {
       scrollLeft: $('.ds_tab').scrollLeft() - 300
     }, 200);
   });
-  aniFunction();
 };
-$(window).on('scroll resize', aniFunction);
-  aniFunction();
-});
