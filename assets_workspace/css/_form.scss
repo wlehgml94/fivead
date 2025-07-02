@@ -25,36 +25,47 @@
 .wpcf7-response-output {
   display: none;
 }
+.wpcf7-form-control-wrap{
+  display: block;
+}
 /* 기본 에러 삭제 */
 span.wpcf7-not-valid-tip {
   display: none;
 }
 /* 유효성 안내 메시지 */
 .ff_valid_box {
-  position: absolute;
-  margin: 0;
   color: $c_err;
   white-space: nowrap;
   @include desktop{
     right: 0;
-    top: -4.2rem;
-    @include text(1.6rem, 400, 1.7);
+    position: absolute;
+    margin: 0;
+    top: -2.7rem;
+    @include text(1.6rem, 400, 1.6);
   }
   @include mobile{
-    bottom: -5rem;
+    margin-top: 1rem;
+    position: static;
     @include text(1.2rem,400,1.6);
   }
 }
 .contact_personal_info{
+  position: relative;
+  .wpcf7-form-control-wrap{
+    display: inline;
+  }
   .ff_valid_box{
     top: auto;
     @include desktop{
-      left: 18.9rem;
-      bottom: -2.9rem;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
     }
-    @include mobile{
-      left: 0;
-      bottom: -4.5rem;
+    .ff_valid_text{
+      justify-content: center;
+      @include mobile{
+        margin-left: -2.2rem;
+      }
     }
   }
 }
@@ -69,12 +80,13 @@ span.wpcf7-not-valid-tip {
 /* 보내기 버튼 활성화 */
 .contact_submit {
   position: relative;
-  .bt-base {
+  input{
+    pointer-events: none;
+  }
+  input {
     &.active {
-      input {
-        cursor: pointer;
-        pointer-events: painted;
-      }
+      cursor: pointer;
+      pointer-events: painted;
     }
   }
 }
@@ -613,7 +625,7 @@ span.wpcf7-not-valid-tip {
       overflow: auto;
       line-height: 170%;
       &:placeholder{
-        color: rgba(23,23,23,0.5);
+        color: #acacac;
       }
       @include desktop{
         font-size: 1.8rem;
@@ -641,6 +653,18 @@ span.wpcf7-not-valid-tip {
         font-size: 1.8rem;
         line-height: 140%;
         font-weight: 700;
+      }
+      p{
+        @include desktop{
+          font-size: 2.4rem;
+          line-height: 140%;
+          font-weight: 700;
+        }
+        @include mobile{
+          font-size: 1.8rem;
+          line-height: 140%;
+          font-weight: 700;
+        }
       }
     }
     .contact_item{
@@ -670,6 +694,9 @@ span.wpcf7-not-valid-tip {
         border: 2px solid rgba(20, 20, 20, 0.20);
         border-radius: 1.2rem;
         margin: 0;
+        &:-internal-autofill-selected{
+          background: #f5f5f5 !important;
+        }
         @include desktop{
           font-size: 1.8rem;
           padding: .8rem 2.4rem;
@@ -772,6 +799,11 @@ span.wpcf7-not-valid-tip {
       }
     }
   } 
+}
+.wpcf7-list-item-label{
+  &::before,&:after{
+    display: none;
+  }
 }
 @media (max-width: 1540px) and (min-width: 961px) {
   .inquiry{

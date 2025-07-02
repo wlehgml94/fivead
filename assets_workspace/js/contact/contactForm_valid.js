@@ -113,11 +113,11 @@ jQuery(document).ready(function() {
 
 	// *****
 	// 전화번호 필드 d
-    $('input[type=tel]').css("color","#c9cacb");
+	$('input[type=tel]').css("color","#acacac");
 	$('input[type=tel]').on('keyup propertychange paste input',function() {
 		let $this = $(this);
 		let validText_complete = $ff_validText('연락처를');
-        $(this).css("color","#4e4e4e");
+        $(this).css("color","#000");
 		// 전화번호 - 정규표현식 : '-' 자동생성
 		$this.val($this.val().replace(/[^0-9]/g, '').replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})/,'$1-$2-$3').replace('--', '-'));
 
@@ -183,73 +183,86 @@ jQuery(document).ready(function() {
 	// *****
 	// 체크박스 : 일반
 	$('.contact_check input[type=checkbox]').on('click', function (event) {
-	let $this = $(this); 
-	let checkbox_input = $this.closest($('.wpcf7-list-item')).find('input');
-	
-	if(checkbox_input.hasClass('checked')) {
-		$valid_on($this);
-	} else {
-		$valid_off($this);
-	}
-	//
-	// ******
-	// 텍스트필드 광고 상품
-		let checkbox_text = $('input[name="your-checkbox_free_text"]');
-		//let checkbox_free = $this.parent().hasClass('has-free-text');
-		//console.log($(checkbox_text).prop('disabled'));
-		//if($(checkbox_text).prop('disabled')){
-		if($('.contact_check .has-free-text input').hasClass('checked')){
-			$(checkbox_text).on('keyup focus propertychange paste input',function() {
-				let $this = $(this);
-				$(this).addClass('o_valid');
-				let validText_complete = `<div class="ff_valid_box sub_valid"><p class="ff_valid_text">광고 상품을 입력해 주세요</p></div>`;
-				
-				if ($this.val().length <= 0) {
-					$ff_validBox($this, validText_complete);
-				}
-			});
-		}else{
-			$(checkbox_text).next().remove();
-			$(checkbox_text).removeClass('o_valid');
-			$(checkbox_text).removeClass('o_verify');
-			$(checkbox_text).val(null);
+		let $this = $(this);
+		let checkbox_input = $this.closest($('.wpcf7-checkbox')).find('input');
+		//let checkbox_last = $this.parent().parent().hasClass('last');
+		// let check_etc = $this.closest($('.contact_check')).find('input[name=check-etc]');
+        
+		// $this.toggleClass('checked');
+		if (checkbox_input.hasClass('checked')) {
+			$valid_on($this);
+        } else {
+			$valid_off($this);
 		}
-	
+        //
+            // ******
+            // 텍스트필드 광고 상품
+            let checkbox_text = $('.contact_check input.wpcf7-free-text');
+            //let checkbox_free = $this.parent().hasClass('has-free-text');
+            //console.log($(checkbox_text).prop('disabled'));
+            //if($(checkbox_text).prop('disabled')){
+            if($('.contact_check .has-free-text input').hasClass('checked')){
+                $(checkbox_text).on('keyup focus propertychange paste input',function() {
+                    let $this = $(this);
+                    $(this).addClass('o_valid');
+                    let validText_complete = `<div class="ff_valid_box sub_valid"><p class="ff_valid_text">선택해 주세요</p></div>`;
+                    
+                    if ($this.val().length <= 0) {
+                        $ff_validBox($this, validText_complete);
+                    }
+                });
+            }else{
+                $(checkbox_text).next().remove();
+                $(checkbox_text).removeClass('o_valid');
+                $(checkbox_text).removeClass('o_verify');
+                $(checkbox_text).val(null);
+            }
+		// 마지막 체크 클릭 - 마지막 항목을 제외한 모든 내용 삭제
+		// if (checkbox_last) {
+		// 	check_etc.toggleClass('active_on').val(' ');
+		// }
 	});
 
 	// ******
 	// 텍스트필드 알게 된 경로
-    $('.contact_radio input[value="선택안함"]').attr('checked', true);
+	$('.contact_radio input[type=radio]').on('click', function (event) {
+		$('.contact_ad').addClass('o_verify');
+	});
+	$('.contact_radio input[value="선택안함"]').attr('checked', true);
 	$('.contact_radio input[name="your-ad"]').on('click', function (event) {
 		let radio_text = $('input[name="your-ad_free_text"]');
 		if($(radio_text).prop('disabled')){
 			$(radio_text).on('keyup focus propertychange paste input',function() {
 				let $this = $(this);
 				$(this).addClass('o_valid');
-				let validText_complete = `<div class="ff_valid_box sub_valid"><p class="ff_valid_text">FIVE AD를 알게된 경로를 입력해 주세요</p></div>`;
-				
+				let validText_complete = `<div class="ff_valid_box sub_valid"><p class="ff_valid_text">입력해 주세요</p></div>`;
 				if ($this.val().length <= 0) {
 					$ff_validBox($this, validText_complete);
 				}
 			});
 		}else if(!$(radio_text).prop('disabled')){
+			$this = $(radio_text);
 			$(radio_text).next().remove();
 			$(radio_text).removeClass('o_valid');
 			$(radio_text).removeClass('o_verify');
-            $(radio_text).val(null);
+			$(radio_text).val(null);
 		}
+	});
+	$('input[value="기타"]').on('click', function(){
+		$('input[name="your-ad_free_text"]').focus();
 	});
 	// *****
 	// 체크박스 : 개인정보 동의 personal_on
 	$('.contact_personal_info input').on('click', function (event) {
     let $this = $(this);
 
+		let pop = $('.pi_popup');
     // 체크박스 상태 토글
     $this.toggleClass('checked');
 
     if (event.target.checked) {
         // 체크된 경우
-        $($this).next().remove();
+        $(pop).next().remove();
         $valid_on($this);
         
         // value 값을 true로 설정
@@ -258,7 +271,7 @@ jQuery(document).ready(function() {
         // 체크 해제된 경우
         $valid_off($this);
         let validText_complete = `<div class="ff_valid_box personal_info_valid"><p class="ff_valid_text">이 항목은 필수 입력값입니다.</p></div>`;
-        $ff_validBox($this, validText_complete);
+        $ff_validBox(pop, validText_complete);
 
         // value 값을 false로 설정
         $this.val('false');

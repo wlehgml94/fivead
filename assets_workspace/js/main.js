@@ -1,7 +1,5 @@
-let winW = $(window).outerWidth();
 let winH = $(window).outerHeight();
 let winScroll = $(window).scrollTop();
-let checkMo = 960;
 var mySwiper = undefined;
 $(window).on('load',function(){
   const swiper = new Swiper('.age_swiper', {
@@ -39,10 +37,10 @@ $(window).on('load',function(){
 
   const swiper3 = new Swiper('.ds_swiper', {
       loop: true,
-      autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-      },
+      // autoplay: {
+    //     delay: 2500,
+    //     disableOnInteraction: false,
+      // },
       navigation: {
         nextEl: ".ds_next",
         prevEl: ".ds_prev",
@@ -83,23 +81,9 @@ function initSwiper() {
 }
 initSwiper();
 
-function imageResize() {
-  let images = $('img.img_resize');
-  images.each(function() {
-    let src = $(this).attr('src');
-    if (winW <= checkMo) {
-      $(this).attr('src', src.replace('/pc/', '/mo/'));
-    } else {
-      $(this).attr('src', src.replace('/mo/', '/pc/'));
-    }
-  });   
-}
 let checked;
-$(window).on('load resize', function() {
-  winW = $(window).outerWidth();
-  initSwiper();
-  imageResize();
-  function countUp() {
+
+function countUp() {
   $('.counter').each(function() {
     var $this = $(this),
         countTo = $this.attr('data-count'),
@@ -109,7 +93,7 @@ $(window).on('load resize', function() {
       countNum: countTo
     },
     {
-      duration: 2000,
+      duration: 1200,
       easing: 'swing',
       step: function() {
         var formattedNum = Math.floor(this.countNum).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -122,6 +106,10 @@ $(window).on('load resize', function() {
     });
   });
 }
+$(window).on('load resize', function() {
+  winW = $(window).outerWidth();
+  initSwiper();
+});
 var aniFunction = function() {
   var $ani = $('.ani_start'); 
 
@@ -150,15 +138,15 @@ var aniFunction = function() {
       }
     });
   });
+  $('.ds_tab li:nth-child(3) a').on('click', function() {
+    $('.ds_tab').animate({
+      scrollLeft: $('.ds_tab').scrollLeft() + 300
+    }, 200);
+  });
+  $('.ds_tab li:first-child a').on('click', function() {
+    $('.ds_tab').animate({
+      scrollLeft: $('.ds_tab').scrollLeft() - 300
+    }, 200);
+  });
 };
-$(window).on('scroll resize', aniFunction);
-aniFunction();
-});
-
-
-$(".pi_popup").on('click',function(){
-  $('.common-agree').show();
-});
-$('.bt_close').on('click',function(){
-  $('.common-agree').hide();
-});
+$(window).on('load scroll resize', aniFunction);

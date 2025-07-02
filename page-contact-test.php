@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: contact
+ * Template Name: contact -test
 **/
 ?>
 <?php 
@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="contact-contents" ga4-text="contact">
-      <?php echo do_shortcode( '[contact-form-7 id="923" title="01.contact"]' ); ?>
+      <?php echo do_shortcode( '[contact-form-7 id="062e111" title="04. 무료 상담 신청_test"]' ); ?>
     </div>
   </div>
 </section>

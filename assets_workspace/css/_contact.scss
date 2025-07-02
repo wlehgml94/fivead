@@ -1,11 +1,11 @@
 .fa_contact{
   background: $c_point;
   .inner{
-    padding: 10rem;
-    max-width: 121rem;
+    padding: 10rem 6.6rem 12rem;
+    max-width: 114.2rem;
     margin: 0 auto;
     @include mobile{
-      padding: 3rem;
+      padding: 3.6rem 3rem 20rem;
     }
     .contact_tit{
       display: flex;
@@ -24,8 +24,11 @@
           @include text2('42');
           font-weight: 700;
           color: $c_primary;
-          margin-top: 1.6rem;
+          @include desktop{
+            margin-top: 1.6rem;
+          }
           @include mobile{
+            margin-top: 1.2rem;
             @include text(2.8rem,700,1.4);
           }
         }
@@ -55,8 +58,8 @@
       .vis_img{
         width: 13rem;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: -1.2rem;
+        right: -0.8rem;
         img{
           width: 100%;
         }
@@ -83,20 +86,20 @@
             &_0 {
               z-index: 1;
               &:after {
-                right: 5rem;
-                bottom: 2.5rem;
-                width: 28.8rem;
-                height: 25rem;
+                right: 12.9rem;
+                bottom: 2.2rem;
+                width: 23.7rem;
+                height: 21.8rem;
                 background: url('../images/contact/pc/window2.png');
               }
             }
             &_1{
               z-index: 2;
               &:after{
-                top: 0;
-                right: 0;
-                width: 232px;
-                height: 174px;
+                top: 2rem;
+                right: 5.5rem;
+                width: 21.9rem;
+                height: 16.5rem;
                 background: url('../images/contact/pc/window.png');
               }
             }
@@ -105,8 +108,8 @@
               &:after {
                 bottom: 1.9rem;
                 left: 0;
-                width: 25.1rem;
-                height: 20.1rem;
+                width: 21.7rem;
+                height: 18.1rem;
                 background: url('../images/contact/pc/person.png');
               }
             }
@@ -115,8 +118,8 @@
               &:after {
                 bottom: 0;
                 right: 9.5rem;
-                width: 6.2rem;
-                height: 7.8rem;
+                width: 5.5rem;
+                height: 7.6rem;
                 background: url('../images/contact/pc/arrow.png');
               }
             }
@@ -128,7 +131,7 @@
   .contact-contents{
     background: $c_primary;
     @include desktop{
-      padding: 4rem;
+      padding: 4rem 4rem 6rem;
       margin-top: 4.2rem;
       border-radius: 3.2rem;
     }
@@ -161,15 +164,31 @@
               }
             }
           }
-          label{
-            .mark{
-              color: $c_point;
-            }
+          label,.form_tit{
             @include desktop{
               @include text(1.8rem,700,1.6);
             }
             @include mobile{
               @include text(1.4rem,700,1.6);
+            }
+            p{
+              @include desktop{
+                @include text(1.8rem,700,1.6);
+              }
+              @include mobile{
+                @include text(1.4rem,700,1.6);
+              }
+            }
+            .mark{
+              color: $c_point;
+              @include mobile{
+                @include text(1.4rem,700,1.6)
+              }
+            }
+            .subTxt{
+              @include desktop{
+                font-size: 1.6rem;
+              }
             }
             .subTxt{
               @include mobile{
@@ -234,17 +253,21 @@
             &[type=radio]{
               appearance: none;
               position: absolute;
-              top: 1.4rem;
               left: 0;
               transform: translateY(-50%);
               border-radius: 50%;
               background: #F0F0F0;
               color: #2b2b2b;
-              font-size: 16px;
               width: 2rem;
               height: 2rem;
               margin-top: 0;
               padding: 0;
+              @include desktop{
+                top: 1.4rem;
+              }
+              @include mobile{
+                top: 1.1rem;
+              }
               &:checked{
                 background: $c_point;
                 border: none;
@@ -271,26 +294,39 @@
                 display: block;
                 position: absolute;
                 right: 1.8rem;
-                top: 0.7rem;
                 width: 2rem;
                 height: 2.1rem;
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='21' viewBox='0 0 20 21' fill='none'%3E%3Cpath d='M4 8.5L10 14.5L16 8.5' stroke='%23ACACAC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
                 background-size: 2rem 2.1rem;
+                top: calc(50% - 0.5rem);
               }
             }
           }
           &.contact_money{
             .wpcf7-form-control-wrap{
+              input{
+                @include desktop{
+                  padding-right: 12.4rem;
+                }
+                @include mobile{
+                  padding-right: 5rem;
+                }
+              }
               &:after{
-                content: '만 원';
+                content: '\B9CC\20\C6D0';
                 display: block;
-                @include text2('16');
-                font-weight: 700;
                 color: #000;
                 position: absolute;
-                top: calc(50% + 0.8rem);
-                right: .8rem;
-                transform: translate(-50%, -50%);
+                top: 50%;
+                transform: translateY(calc(-50% + 0.5rem));
+                @include desktop{
+                  @include text(1.8rem,700,1.6);
+                  right: 1.4rem;
+                }
+                @include mobile{
+                  right: 1.2rem;
+                  @include text(1.4rem,700,1.6);
+                }
               }
             }
           }
@@ -302,6 +338,14 @@
               width: 100%;
               @include mobile{
                 @include text2('14');
+              }
+              input[type=checkbox]{
+                @include desktop{
+                  margin-right: 0.8rem;
+                }
+                @include mobile{
+                  padding: 0;
+                }
               }
               em{
                 color: #aaa;
@@ -317,14 +361,17 @@
               }
             }
             .has-free-text{
-              .wpcf7-list-item-label{
-                @include desktop{
-                  margin-left: .8rem;
-                }
-                @include mobile{
-                  margin-left: .2rem;
+              label{
+                display: flex;
+                .wpcf7-list-item-label{
+                  @include mobile{
+                    margin-left: .2rem;
+                  }
                 }
               }
+            }
+            .ff_valid_box{
+              top: -3.2rem;
             }
           }
           .contact_radio{
@@ -349,7 +396,7 @@
               .ff_valid_box{
                 @include desktop{
                   bottom: -3.5rem;
-                  left: 7rem;
+                  left: 7.6rem;
                   top: auto;
                 }
               }
@@ -362,15 +409,15 @@
             }
             .ff_valid_box{
               @include mobile{
-                bottom: -3rem;
-                left: 2.9rem;
+                margin-left: 2.9rem;
+                margin-top: 0;
               }
             }
             .wpcf7-list-item-label{
               display: block;
-              line-height: 3.4rem;
               @include desktop{
-                width: 4.2rem;
+                width: 4.4rem;
+                line-height: 3.4rem;
               }
               @include mobile{
                 width: calc(100% - 2.8rem);
@@ -381,18 +428,25 @@
               border: none;
               border-bottom: 1px solid #ddd;
               border-radius: 0;
-              height: 3.4rem;
               margin-top: 0;
               padding: 0.4rem 0;
+              margin-left: 0.4rem;
+              @include desktop{
+                @include text(1.6rem,400,1.6);
+                height: 3.4rem;
+              }
               @include mobile{
                 margin-left: 2.8rem;
+                height: 3.2rem;
               }
             }
             input[type=checkbox]{
               margin-top: .6rem;
             }
             input[type=radio]{
-              margin-top: 0.3rem;
+              @include desktop{
+                margin-top: 0.3rem;
+              }
             }
             input[name=your-checkbox_free_text]{
               @include desktop{
@@ -406,16 +460,25 @@
         }
       }
       .contact_personal_info{
-        margin-top: 4.2rem;
         display: flex;
         align-items: flex-start;
         justify-content: center;
+        color: $c_gray_1;
         @include desktop{
           @include text(1.8rem,400,1.6);
+          margin-top: 4.2rem;
         }
         @include mobile{
           @include text(1.4rem,400,1.6);
           padding-left: 2rem;
+          margin-top: 3rem;
+        }
+        p{
+          display: flex;
+          align-items: flex-start;
+        }
+        .wpcf7-list-item{
+          margin-left: 0;
         }
         .wpcf7-not-valid{
           display: inline-flex;
@@ -423,8 +486,13 @@
             margin-bottom: 2.9rem;
           }
         }
-        .wpcf7-list-item{
-          margin-left: 0;
+        &.o_verify{
+          .wpcf7-not-valid{
+            display: inline-flex;
+            @include desktop{
+              margin-bottom: 0;
+            }
+          }
         }
         input{
           &[type=checkbox] {
@@ -446,6 +514,8 @@
               height: 2rem;
               border: none;
               background-color: #F0F0F0;
+              border-radius: 2px;
+              border: 1px solid #ddd;
             }
             &:checked{
               &:before{
@@ -468,11 +538,11 @@
         }
         .pi_popup{
           color: $c_point;
+          vertical-align: top;
           @include desktop{
             @include text(1.8rem,400,1.6);
           }
           @include mobile{
-            width: 8.5rem;
             @include text(1.4rem,400,1.6);
           }
         }
@@ -485,22 +555,40 @@
           margin-top: 3.2rem;
         }
         label{
-          @include text2('18');
-          font-weight: 700;
+          @include desktop{
+            @include text(1.8rem,700,1.6);
+          }
+          @include mobile{
+            @include text(1.4rem,700,1.6);
+          }
           span{
-            font-size: 1.6rem;
-            line-height: 1.6;
             color: #646464;
             margin-left: 0.8rem;
+            @include desktop{
+              @include text(1.6rem,400,1.6);
+            }
+            @include mobile{
+              @include text(1.4rem,400,1.6);
+            }
           }
         }
         textarea{
           background: $c_gray_3;
           border: 1px solid #ddd;
           border-radius: 8px;
-          padding: 2rem 1.4rem 0;
           width: 100%;
-          margin-top: .6rem;
+          @include desktop{
+            padding: 1.2rem 2rem 0;
+            @include text(1.6rem,400,1.6);
+            height: 14.7rem;
+            margin-top: .6rem;
+          }
+          @include mobile{
+            padding: 1.2rem 1.2rem 0;
+            height: 30.7rem;
+            margin-top: 1.5rem;
+            @include text(1.4rem,400,1.6);
+          }
           &::placeholder{
             color: #aaa;
           }
@@ -519,9 +607,12 @@
           position: static;
           width: fit-content;
           padding: 1.3rem 6.2rem;
-          margin: 4.2rem auto 0;
+          @include desktop{
+            margin: 4.2rem auto 0;
+          }
           @include mobile{
             width: 100%;
+            margin: 3rem auto 0;
           }
         }
         .active{
@@ -533,15 +624,83 @@
   }
 }
 .daterangepicker{
+  @include desktop{
+    margin-top: 4.6rem !important;
+  }
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 8px !important;
+  &:before,&:after{
+    display: none !important;
+  }
+  @include desktop{
+    border: 1px solid #acacac !important;
+  }
+  @include mobile{
+    border: 1px solid #ddd !important;
+  }
+  td.off,td.off.in-range{
+    color: #acacac !important;
+  }
   .calendar-table{
+    .prev{
+      span{
+        width: 2rem;
+        height: 2rem;
+        border:none !important;
+        transform: rotate(0) !important;
+        vertical-align: middle;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M12 4L6 10L12 16' stroke='%23ACACAC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      }
+    }
+    .next{
+      span{
+        width: 2rem;
+        height: 2rem;
+        border:none !important;
+        transform: rotate(0) !important;
+        vertical-align: middle;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='22' viewBox='0 0 21 22' fill='none'%3E%3Cpath d='M8.98405 17.6826L14.9922 11.2062L8.98405 4.72976' stroke='%23ACACAC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      }
+    }
     th,td{
-      font-size: 1.6rem !important;
-      width: 3.4rem !important;
-      height: 2.7rem !important;
+      @include desktop{
+        font-size: 1.8rem !important;
+        height: 4.7rem !important;
+      }
+      @include mobile{
+        font-size: 1.6rem !important;
+      }
+      min-width: 4.4rem !important;
+      height: 3.9rem !important;
       padding: .4rem 0 !important;
+      @include mobile{
+        min-width: 3.4rem !important;
+        height: 3.5rem !important;
+      }
     }
     th{
       font-weight: 700 !important;
+    }
+    tr:first-child{
+      th{
+        @include mobile{
+          height: 3.1rem !important;
+          padding-bottom: 1rem !important;
+          background: none;
+        }
+        &.prev, &.next{
+          padding-top: 0 !important;
+          &:hover{
+            background: none;
+          }
+        }
+        &.prev{
+          text-align: left;
+        }
+        &.next{
+          text-align: right;
+        }
+      }
     }
   }
   td.in-range{
@@ -554,16 +713,46 @@
     appearance:none;
     &.yearselect {
       float: left !important;
-      font-size: 2rem !important;
-      font-weight: 700 !important;
       width: auto !important;
-      color: #000;
+      color: #000 !important;
+      float: right !important;
+      font-weight: 700 !important;
+      opacity: 1;
+      @include desktop{
+        font-size: 2rem !important;
+      }
+      @include mobile{
+        font-size: 1.8rem !important;
+        background: none !important;
+      }
      }
      &.monthselect{
       width: auto !important;
-      font-size: 2rem !important;
       font-weight: 700 !important;
-      color: #000;
+      color: #000 !important;
+      float: right !important;
+      margin-right: 33% !important;
+      opacity: 1;
+      @include desktop{
+        font-size: 2rem !important;
+      }
+      @include mobile{
+        margin-right: 28% !important;
+        font-size: 1.8rem !important;
+        background: none !important;
+      }
+    }
+  }
+  .drp-calendar{
+    max-width: 35.6rem !important;
+    &.left{
+      padding: 2.2rem 0 3.2rem 3.2rem !important;
+      @include mobile{
+        padding: 0.8rem 1.8rem 2rem !important;
+      }
+    }
+    &.right{
+      padding: 2.2rem 3.2rem 3.2rem 2.2rem !important;
     }
   }
   @include mobile{

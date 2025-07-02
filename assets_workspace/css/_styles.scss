@@ -76,16 +76,17 @@ $moSize: 960px;
     line-height: 1.5;
   } @else if ($size == '28') {
     font-size: 2.8rem;
-    line-height: 1.5;
+    line-height: 1.4;
+    letter-spacing: -0.28px;
   }  @else if ($size == '24') {
     font-size: 2.4rem;
-    line-height: 1.5;
+    line-height: 1.6;
   } @else if ($size == '18') {
     font-size: 1.8rem;
     line-height: 1.5;
   } @else if ($size == '14') {
     font-size: 1.4rem;
-    line-height: 1.5;
+    line-height: 1.6;
   } @else if ($size == '12') {
     font-size: 1.2rem;
     line-height: 1.6;
