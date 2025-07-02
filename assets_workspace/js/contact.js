@@ -11,7 +11,7 @@
     let date_text = $('input[name="your-date"]');
     $(date_text).prop('readonly', true);
     $(date_text).daterangepicker({
-      opens: 'left',
+      opens: 'right',
       autoUpdateInput: false,
       autoApply: true,
       showDropdowns: true,
@@ -58,13 +58,13 @@
     });
 
     $('input[name="your-checkbox[]"]').each(function() {
-      let beforeStr = $(this).val();
-      let afterStr = beforeStr.split('(');
-      $(this).val(afterStr[0]);
-      $(this).next().html(afterStr[0] + `<em>(` + afterStr[1] + `</em>`);
-      if (afterStr[1] == undefined) {
-        $(this).next().html(afterStr[0]);
-      }
+      // let beforeStr = $(this).val();
+      // let afterStr = beforeStr.split('(');
+      // $(this).val(afterStr[0]);
+      // $(this).next().html(afterStr[0] + `<em>(` + afterStr[1] + `</em>`);
+      // if (afterStr[1] == undefined) {
+      //   $(this).next().html(afterStr[0]);
+      // }
     });
   });
   $(window).on('load resize', function() {
@@ -76,7 +76,7 @@
       let date_text = $('input[name="your-date"]');
       $(date_text).prop('readonly', true);
       $(date_text).daterangepicker({
-        opens: 'left',
+        opens: 'center',
         autoUpdateInput: false,
         autoApply: true,
         showDropdowns: true,
@@ -120,9 +120,9 @@
 
   let $path = location.pathname;
   let pathUrl = $path.replace(/\?path=/g, "");
-  if ($path == '/contact_1') {
+  if ($path == '/contact') {
     path.prop('value', pathUrl);
-    $("input[name=fieldName").prop('value', "광고상품문의_1");
+    $("input[name=fieldName").prop('value', "광고상품문의");
     $(".ga4__cta-submit").attr("ga4-text", "contact1");
   }
   $(".pi_popup").on('click',function(){

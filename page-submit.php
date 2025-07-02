@@ -3,9 +3,11 @@
  * Template Name: 견적 문의 완료
 **/
 ?>
-<?php get_header(); 
-
-$img_src = WEB_URL.'/assets/images/';
+<?php
+  $meta_title = '상담 신청 완료';
+  include_once dirname(__FILE__, 1).'/includes/meta.php';
+  get_header(); 
+  $img_src = WEB_URL.'/assets/images/';
 ?>
   <!-- complete-wrapper -->
   <section class="complete-wrapper">

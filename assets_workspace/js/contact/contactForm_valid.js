@@ -113,11 +113,11 @@ jQuery(document).ready(function() {
 
 	// *****
 	// 전화번호 필드 d
-    $('input[type=tel]').css("color","#c9cacb");
+	$('input[type=tel]').css("color","#acacac");
 	$('input[type=tel]').on('keyup propertychange paste input',function() {
 		let $this = $(this);
 		let validText_complete = $ff_validText('연락처를');
-        $(this).css("color","#4e4e4e");
+        $(this).css("color","#000");
 		// 전화번호 - 정규표현식 : '-' 자동생성
 		$this.val($this.val().replace(/[^0-9]/g, '').replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})/,'$1-$2-$3').replace('--', '-'));
 
@@ -236,17 +236,20 @@ jQuery(document).ready(function() {
 				let $this = $(this);
 				$(this).addClass('o_valid');
 				let validText_complete = `<div class="ff_valid_box sub_valid"><p class="ff_valid_text">입력해 주세요</p></div>`;
-				
 				if ($this.val().length <= 0) {
 					$ff_validBox($this, validText_complete);
 				}
 			});
 		}else if(!$(radio_text).prop('disabled')){
+			$this = $(radio_text);
 			$(radio_text).next().remove();
 			$(radio_text).removeClass('o_valid');
 			$(radio_text).removeClass('o_verify');
 			$(radio_text).val(null);
 		}
+	});
+	$('input[value="기타"]').on('click', function(){
+		$('input[name="your-ad_free_text"]').focus();
 	});
 	// *****
 	// 체크박스 : 개인정보 동의 personal_on

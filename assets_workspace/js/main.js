@@ -149,4 +149,4 @@ var aniFunction = function() {
     }, 200);
   });
 };
-$(window).on('scroll resize', aniFunction);
+$(window).on('load scroll resize', aniFunction);

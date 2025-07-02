@@ -4,8 +4,7 @@
 **/
 ?>
 <?php 
-  $meta_title = 'contact';
-  $meta_description = 'contact1';
+  $meta_title = '광고 상품 문의하기';
   include_once dirname(__FILE__, 1).'/includes/meta.php';
   get_header(); 
   $img_src = WEB_URL.'/assets/images/';

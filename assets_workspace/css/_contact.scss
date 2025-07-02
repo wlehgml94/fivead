@@ -1,11 +1,11 @@
 .fa_contact{
   background: $c_point;
   .inner{
-    padding: 18rem 6.6rem 12rem;
+    padding: 10rem 6.6rem 12rem;
     max-width: 114.2rem;
     margin: 0 auto;
     @include mobile{
-      padding: 7.9rem 3rem 20rem;
+      padding: 3.6rem 3rem 20rem;
     }
     .contact_tit{
       display: flex;
@@ -24,8 +24,11 @@
           @include text2('42');
           font-weight: 700;
           color: $c_primary;
-          margin-top: 1.6rem;
+          @include desktop{
+            margin-top: 1.6rem;
+          }
           @include mobile{
+            margin-top: 1.2rem;
             @include text(2.8rem,700,1.4);
           }
         }
@@ -55,8 +58,8 @@
       .vis_img{
         width: 13rem;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: -1.2rem;
+        right: -0.8rem;
         img{
           width: 100%;
         }
@@ -161,20 +164,31 @@
               }
             }
           }
-          label{
-            .mark{
-              color: $c_point;
-            }
-            .subTxt{
-              @include desktop{
-                font-size: 1.6rem;
-              }
-            }
+          label,.form_tit{
             @include desktop{
               @include text(1.8rem,700,1.6);
             }
             @include mobile{
               @include text(1.4rem,700,1.6);
+            }
+            p{
+              @include desktop{
+                @include text(1.8rem,700,1.6);
+              }
+              @include mobile{
+                @include text(1.4rem,700,1.6);
+              }
+            }
+            .mark{
+              color: $c_point;
+              @include mobile{
+                @include text(1.4rem,700,1.6)
+              }
+            }
+            .subTxt{
+              @include desktop{
+                font-size: 1.6rem;
+              }
             }
             .subTxt{
               @include mobile{
@@ -239,17 +253,21 @@
             &[type=radio]{
               appearance: none;
               position: absolute;
-              top: 1.4rem;
               left: 0;
               transform: translateY(-50%);
               border-radius: 50%;
               background: #F0F0F0;
               color: #2b2b2b;
-              font-size: 16px;
               width: 2rem;
               height: 2rem;
               margin-top: 0;
               padding: 0;
+              @include desktop{
+                top: 1.4rem;
+              }
+              @include mobile{
+                top: 1.1rem;
+              }
               &:checked{
                 background: $c_point;
                 border: none;
@@ -280,26 +298,35 @@
                 height: 2.1rem;
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='21' viewBox='0 0 20 21' fill='none'%3E%3Cpath d='M4 8.5L10 14.5L16 8.5' stroke='%23ACACAC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
                 background-size: 2rem 2.1rem;
-                @include desktop{
-                  top: 0.7rem;
-                }
-                @include mobile{
-                  top: 0.5rem;
-                }
+                top: calc(50% - 0.5rem);
               }
             }
           }
           &.contact_money{
             .wpcf7-form-control-wrap{
+              input{
+                @include desktop{
+                  padding-right: 12.4rem;
+                }
+                @include mobile{
+                  padding-right: 5rem;
+                }
+              }
               &:after{
-                content: '만 원';
+                content: '\B9CC\20\C6D0';
                 display: block;
-                @include text(1.6rem,700,1.6);
                 color: #000;
                 position: absolute;
-                top: 1.4rem;
-                right: .8rem;
-                transform: translate(-50%, -50%);
+                top: 50%;
+                transform: translateY(calc(-50% + 0.5rem));
+                @include desktop{
+                  @include text(1.8rem,700,1.6);
+                  right: 1.4rem;
+                }
+                @include mobile{
+                  right: 1.2rem;
+                  @include text(1.4rem,700,1.6);
+                }
               }
             }
           }
@@ -314,7 +341,10 @@
               }
               input[type=checkbox]{
                 @include desktop{
-                  margin-right: 0.4rem;
+                  margin-right: 0.8rem;
+                }
+                @include mobile{
+                  padding: 0;
                 }
               }
               em{
@@ -326,22 +356,22 @@
                 @include mobile{
                   display: block;
                   @include text2('12');
-                  margin-left: 2.9rem;
+                  margin-left: 2.6rem;
                 }
               }
             }
             .has-free-text{
-              .wpcf7-list-item-label{
-                @include desktop{
-                  margin-left: .8rem;
-                }
-                @include mobile{
-                  margin-left: .2rem;
+              label{
+                display: flex;
+                .wpcf7-list-item-label{
+                  @include mobile{
+                    margin-left: .2rem;
+                  }
                 }
               }
             }
             .ff_valid_box{
-              top: -4.2rem;
+              top: -3.2rem;
             }
           }
           .contact_radio{
@@ -385,9 +415,9 @@
             }
             .wpcf7-list-item-label{
               display: block;
-              line-height: 3.4rem;
               @include desktop{
                 width: 4.4rem;
+                line-height: 3.4rem;
               }
               @include mobile{
                 width: calc(100% - 2.8rem);
@@ -398,19 +428,25 @@
               border: none;
               border-bottom: 1px solid #ddd;
               border-radius: 0;
-              height: 3.4rem;
               margin-top: 0;
               padding: 0.4rem 0;
               margin-left: 0.4rem;
+              @include desktop{
+                @include text(1.6rem,400,1.6);
+                height: 3.4rem;
+              }
               @include mobile{
                 margin-left: 2.8rem;
+                height: 3.2rem;
               }
             }
             input[type=checkbox]{
               margin-top: .6rem;
             }
             input[type=radio]{
-              margin-top: 0.3rem;
+              @include desktop{
+                margin-top: 0.3rem;
+              }
             }
             input[name=your-checkbox_free_text]{
               @include desktop{
@@ -588,7 +624,11 @@
   }
 }
 .daterangepicker{
+  @include desktop{
+    margin-top: 4.6rem !important;
+  }
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 8px !important;
   &:before,&:after{
     display: none !important;
   }
@@ -597,7 +637,6 @@
   }
   @include mobile{
     border: 1px solid #ddd !important;
-    border-radius: 8px !important;
   }
   td.off,td.off.in-range{
     color: #acacac !important;
@@ -642,6 +681,27 @@
     th{
       font-weight: 700 !important;
     }
+    tr:first-child{
+      th{
+        @include mobile{
+          height: 3.1rem !important;
+          padding-bottom: 1rem !important;
+          background: none;
+        }
+        &.prev, &.next{
+          padding-top: 0 !important;
+          &:hover{
+            background: none;
+          }
+        }
+        &.prev{
+          text-align: left;
+        }
+        &.next{
+          text-align: right;
+        }
+      }
+    }
   }
   td.in-range{
     background: #FDE3D8 !important;
@@ -663,6 +723,7 @@
       }
       @include mobile{
         font-size: 1.8rem !important;
+        background: none !important;
       }
      }
      &.monthselect{
@@ -678,19 +739,20 @@
       @include mobile{
         margin-right: 28% !important;
         font-size: 1.8rem !important;
+        background: none !important;
       }
     }
   }
   .drp-calendar{
     max-width: 35.6rem !important;
     &.left{
-      padding: 3.2rem 0 3.2rem 3.2rem !important;
+      padding: 2.2rem 0 3.2rem 3.2rem !important;
       @include mobile{
-        padding: 0.8rem 1.8rem !important;
+        padding: 0.8rem 1.8rem 2rem !important;
       }
     }
     &.right{
-      padding: 3.2rem !important;
+      padding: 2.2rem 3.2rem 3.2rem 2.2rem !important;
     }
   }
   @include mobile{

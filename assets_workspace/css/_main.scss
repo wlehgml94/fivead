@@ -1,11 +1,5 @@
 .main-contents{
   position: relative;
-  @include desktop{
-    margin-top: 6rem;
-  }
-  @include mobile{
-    margin-top: 4rem;
-  }
   .inner{
     max-width: 135.6rem;
     margin: 0 auto;
@@ -205,7 +199,7 @@
     &1{
       .img_box{
         @include desktop{
-          padding-left: 10.4rem;
+          margin-left: 10.4rem;
           margin-top: 4rem;
           border-top: 1px solid #000;
           border-bottom: 1px solid #000;
@@ -356,7 +350,7 @@
           text-align: center;
           @include desktop{
             flex: 1;
-            padding: 5rem 1rem 6.6rem;
+            padding: 5rem 0 6.6rem;
           }
           @include mobile{
             width: calc(50% - .4rem);
@@ -631,7 +625,7 @@
           }
           ._prev,._next{
             top: auto;
-            bottom: 13rem;
+            bottom: 15.4rem;
             z-index: 1;
           }
         }
@@ -747,8 +741,16 @@
                 padding-left: 0;
               }
               &:first-child{
+                @include desktop{
+                  padding-left: 3.5rem;
+                }
                 &::before{
                   display: none;
+                }
+              }
+              &:last-child{
+                @include desktop{
+                  padding-right: 3.5rem;
                 }
               }
               &::before{

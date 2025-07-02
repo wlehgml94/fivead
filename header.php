@@ -23,7 +23,7 @@
   $meta_set_image;
   //기본 메타 태그 세팅
   $default_meta_title = '파이브애드';
-  $default_meta_description = '국내 1위 공유오피스 패스트파이브에서 당신의 제품과 서비스를 홍보하세요';
+  $default_meta_description = '1위 공유오피스 패스트파이브가 만든 광고 플랫폼 파이브애드';
   $default_meta_image = WEB_URL.'/assets/images/meta/common.jpg';
   //각 페이지에 메타 태그 설정이 있을 경우, 해당 태그 설정. 없을 경우 기본 태그 설정
   if (!isset($_POST['meta_set_title'])) {
@@ -67,8 +67,16 @@
   <meta property="og:image:height" content="700">
   <!-- marketing tag -->
   <meta name="facebook-domain-verification" content="yei3586lhdtswj85sebj8cuvampss0" />
-  <?php wp_head(); ?>
   <link rel="icon" href="<?= WEB_URL; ?>/assets/images/favicon.png" />
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-<?= $gtm_id ?>');</script>
+  <!-- End Google Tag Manager -->
+  <?php wp_head(); ?>
+<!-- Google Tag Manager -->
   <link rel="stylesheet" href="<?= WEB_URL; ?>/assets/lib/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="<?= WEB_URL; ?>/assets/css/common.css" rel="prerender" />
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
@@ -78,8 +86,9 @@
 
 <body <?php body_class(); ?>>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-<?= $gtm_id ?>" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-<?= $gtm_id ?>"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <?php 
   $host = $_SERVER['REQUEST_URI'];
   $page_path = strpos($host, '&') ? strtok($host, '&') : strtok($host, '?');
@@ -90,11 +99,13 @@
   $formatted_contact_number = str_replace('-', '.', CONTACT_NUMBER);
 ?>
   <h2 class="d_hidden" id="pageName"><?= $page_name; ?></h2>
-  <div class="top_banner">
-    <a href="/contact_1" class="ga4__topBanner" ga4-text="FIVE AD 서비스 소개서 다운로드">
-      <img src="<?= $img_src ?>common/pc/top_logo.png" alt="">
-      <p>광고 상품 소개서 다운로드</p>
-    </a>
-  </div>
   <main class="fivead-visual-wrapper">
+  <?php if(is_home() || is_front_page() || is_page('main')){ ?>
+    <div class="top_banner">
+      <a href="/contact" class="ga4__topBanner" ga4-text="FIVE AD 서비스 소개서 다운로드">
+        <img src="<?= $img_src ?>common/pc/top_logo.png" alt="">
+        <p>광고 상품 소개서 다운로드</p>
+      </a>
+    </div>
+  <?php } ?>
   <div class="dim"></div>

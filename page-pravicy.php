@@ -4,8 +4,7 @@
 **/
 ?>
 <?php 
-  $meta_title = '개인정보처리방침';
-  $meta_description = '패스트파이브(주)에서는 개인정보 보호를 위하여 개인정보 보호지침을 마련하고 이를 준수하고 있습니다.';
+  $meta_title = '개인정보처리방침 | 파이브애드';
   include_once dirname(__FILE__, 1).'/includes/meta.php';
   get_header(); 
 ?>

@@ -71,6 +71,6 @@ jQuery(document).ready(function($) {
 
   // wpcf7mailsent / wpcf7submit
   $('form.wpcf7-form').on('wpcf7submit', function(e) {
-    location.replace('/submit_fivead_contact_1');
+    location.replace('/submit');
   });
 });

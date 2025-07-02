@@ -88,6 +88,13 @@ function shapeSpace_disable_sitemap_specific_page($args, $post_type) {
 	$args['post__not_in'][] = 15;
 	return $args;
 }
+add_filter('wpcf7_form_elements', 'custom_cf7_checkbox_labels');
+function custom_cf7_checkbox_labels($form) {
+    $form = str_replace('>디스플레이 광고<', '>디스플레이 광고 <em>(엘리베이터, 라운지, 스탠딩 디스플레이)</em><', $form);
+    $form = str_replace('>오프라인 이벤트<', '>오프라인 이벤트 <em>(샘플링, 현장 이벤트)</em><', $form);
+    $form = str_replace('>오프라인 홍보물<', '>오프라인 홍보물 <em>(라운지 종이컵, 리플릿, 폰부스 스티커)</em><', $form);
+    return $form;
+}
 add_filter('wp_sitemaps_posts_query_args', 'shapeSpace_disable_sitemap_specific_page', 10, 2);
 
 ?>

@@ -4,6 +4,9 @@
 **/
 ?>
 <?php get_header(); 
+  $meta_title = '1위 공유오피스 패스트파이브가 만든 광고 플랫폼 파이브애드';
+  $meta_description = '당신의 고객이 가장 긴 시간을 보내는 사무 공간에서 제품과 서비스를 홍보하세요';
+  include_once dirname(__FILE__, 1).'/includes/meta.php';
   $img_src = WEB_URL.'/assets/images/';
   $video_src = WEB_URL.'/assets/video/';
 ?>
@@ -22,7 +25,7 @@
         <img src="<?= $img_src; ?>/main/pc/img_logo.png" alt="">
         <p>국내 1위 공유오피스 패스트파이브에서 <br />당신의 제품과 서비스를 홍보하세요</p>
         <div class="btn_group">
-          <a class="ga4__cta_top" href="/contact_1">광고 상품 문의</a>
+          <a class="ga4__cta_top" href="/contact">광고 상품 문의</a>
         </div>
     </div>
     </div>
@@ -286,7 +289,7 @@
         <p>아무나가 아닌 확실한 타겟에게 <br />홍보하고 싶다면?</p>
         <img src="<?= $img_src; ?>/main/pc/footer_logo.png" alt="">
         <div class="btn_group">
-          <a class="ga4__cta_bottom" href="/contact_1">광고 상품 문의</a>
+          <a class="ga4__cta_bottom" href="/contact">광고 상품 문의</a>
         </div>
       </div>
       <div class="img_box">
