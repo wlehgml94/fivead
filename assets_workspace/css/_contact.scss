@@ -164,13 +164,7 @@
               }
             }
           }
-          label,.form_tit{
-            @include desktop{
-              @include text(1.8rem,700,1.6);
-            }
-            @include mobile{
-              @include text(1.4rem,700,1.6);
-            }
+          .form_tit{
             p{
               @include desktop{
                 @include text(1.8rem,700,1.6);
@@ -178,6 +172,14 @@
               @include mobile{
                 @include text(1.4rem,700,1.6);
               }
+            }
+          }
+          label,.form_tit{
+            @include desktop{
+              @include text(1.8rem,700,1.6);
+            }
+            @include mobile{
+              @include text(1.4rem,700,1.6);
             }
             .mark{
               color: $c_point;
@@ -325,6 +327,8 @@
                 }
                 @include mobile{
                   right: 1.2rem;
+                  top: 2.47rem;
+                  transform: translateY(0);
                   @include text(1.4rem,700,1.6);
                 }
               }
@@ -441,7 +445,12 @@
               }
             }
             input[type=checkbox]{
-              margin-top: .6rem;
+              @include desktop{
+                margin-top: .6rem;
+              }
+              @include mobile{
+                margin-top: 0.2rem;
+              }
             }
             input[type=radio]{
               @include desktop{
@@ -718,6 +727,7 @@
       float: right !important;
       font-weight: 700 !important;
       opacity: 1;
+      margin-right: -3px !important;
       @include desktop{
         font-size: 2rem !important;
       }
@@ -733,6 +743,8 @@
       float: right !important;
       margin-right: 33% !important;
       opacity: 1;
+      position: relative;
+      z-index: 1;
       @include desktop{
         font-size: 2rem !important;
       }
