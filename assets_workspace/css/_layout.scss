@@ -355,6 +355,71 @@ transition: background-color 0.25s 0.25s ease-in;
     z-index: 999;
   }
 }
+.fa_header{
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  background: $c_primary;
+  .header_inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include desktop{
+      padding: 1.3rem 6.6rem;
+    }
+    @include mobile{
+      padding: 1.5rem 3rem 1.4rem;
+    }
+    h1{
+      a{
+        margin-left: -2rem;
+        display: block;
+        box-sizing: content-box;
+        @include desktop{
+          width: 13.2rem;
+          padding: 0.6rem 2rem;
+        }
+        @include mobile{
+          width: 8.3rem;
+          padding: 1rem 2rem;
+          margin-top: -1rem;
+          margin-bottom: -1rem;
+        }
+        img{
+          width: 100%;
+        }
+      }
+    }
+    .contact_btn{
+      background: $c_point;
+      color: $c_primary;
+      display: flex;
+      align-items: center;
+      @include desktop{
+        padding: .6rem 2rem 0.6rem 2.4rem;
+        @include text(1.8rem,700,1.6);
+      }
+      @include mobile{
+        @include text(1.2rem,700,1.6);
+        padding: 0.6rem 0.8rem 0.6rem 1.2rem;
+      }
+      &:after{
+        content: '';
+        width: 2rem;
+        height: 2.1rem;
+        display: inline-flex;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='21' viewBox='0 0 20 21' fill='none'%3E%3Cpath d='M7.5 5.2002L12.5 10.2002L7.5 15.2002' stroke='white' stroke-width='1.7094' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        @include mobile{
+          width: 1.4rem;
+          height: 1.4rem;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='15' viewBox='0 0 14 15' fill='none'%3E%3Cpath d='M5.25 4L8.75 7.5L5.25 11' stroke='white' stroke-width='1.19658' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        }
+      }
+    }
+  }
+}
 .top_banner{
   position: sticky;
   top: 0;
@@ -460,14 +525,13 @@ transition: background-color 0.25s 0.25s ease-in;
     color: $c_primary;
     display: flex;
     align-items: center;
-    @include text2('24');
-    font-weight: 700;
     @include desktop{
       padding: 1.9rem 5.8rem;
+      @include text2(2.4rem,700,1.5);
     }
     @include mobile{
       padding: 1.1rem 3.6rem;
-      @include text2('14');
+      @include text2(1.4rem,700,1.6);
     }
     &::after{
       content: '';

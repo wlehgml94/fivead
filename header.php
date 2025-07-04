@@ -100,12 +100,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ?>
   <h2 class="d_hidden" id="pageName"><?= $page_name; ?></h2>
   <main class="fivead-visual-wrapper">
-  <?php if(is_home() || is_front_page() || is_page('main')){ ?>
-    <div class="top_banner">
-      <a href="/contact" class="ga4__topBanner" ga4-text="FIVE AD 서비스 소개서 다운로드">
-        <img src="<?= $img_src ?>common/pc/top_logo.png" alt="">
-        <p>광고 상품 소개서 다운로드</p>
-      </a>
-    </div>
-  <?php } ?>
+    <header class="fa_header">
+      <div class="header_inner">
+        <h1 class="logo"><a class="ga4__GNB" ga4-text="logo_fivead" href="/"><img src="<?= $img_src ?>common/pc/top_logo.png" class="img_resize" alt="파이브애드 로고"></a></h1>
+        <a href="/contact" class="contact_btn ga4__GNB" ga4-text="contact">광고 상품 소개서 다운로드</a>
+      </div>
+    </header>
   <div class="dim"></div>
